@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Loggingtest.dir/logstreamtest.cpp.o  -o Loggingtest ../libfuyou_base.a -lpthread -lrt 

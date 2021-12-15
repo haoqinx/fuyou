@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/ftest.dir/filetest.cpp.o  -o ftest ../libfuyou_base.a -lpthread -lrt 

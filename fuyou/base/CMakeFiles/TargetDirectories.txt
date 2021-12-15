@@ -1,0 +1,6 @@
+/home/hqin/fuyou/fuyou/base/CMakeFiles/rebuild_cache.dir
+/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir
+/home/hqin/fuyou/fuyou/base/CMakeFiles/edit_cache.dir
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/rebuild_cache.dir
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/filetest.dir
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/edit_cache.dir

@@ -1,0 +1,3 @@
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/rebuild_cache.dir
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/LoggingTest.dir
+/home/hqin/fuyou/fuyou/base/tests/CMakeFiles/edit_cache.dir

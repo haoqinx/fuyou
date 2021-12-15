@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/LoggingTest.dir/logstreamtest.o  -o LoggingTest  -L/home/hqin/fuyou/fuyou/base ../libfuyou_base.a -lpthread -lrt 

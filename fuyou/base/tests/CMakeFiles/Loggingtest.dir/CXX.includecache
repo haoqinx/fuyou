@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hqin/fuyou/fuyou/base/Logstream.h
+nonecopyable.h
+/home/hqin/fuyou/fuyou/base/nonecopyable.h
+string
+-
+string.h
+-
+algorithm
+-
+iostream
+-
+
+/home/hqin/fuyou/fuyou/base/nonecopyable.h
+
+/home/hqin/fuyou/fuyou/base/tests/logstreamtest.cpp
+../Logstream.h
+/home/hqin/fuyou/fuyou/base/Logstream.h
+iostream
+-
+
