@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou/base
 CMakeFiles/fuyou_base.dir/all:
 	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/depend
 	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=3,4,5,6,7 "Built target fuyou_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target fuyou_base"
 .PHONY : CMakeFiles/fuyou_base.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/fuyou_base.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fuyou_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fuyou_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 0
 .PHONY : CMakeFiles/fuyou_base.dir/rule
@@ -100,12 +100,12 @@ clean: CMakeFiles/fuyou_base.dir/clean
 # Directory level rules for directory tests
 
 # Convenience name for "all" pass in the directory.
-tests/all: tests/CMakeFiles/filetest.dir/all
+tests/all: tests/CMakeFiles/loggertest.dir/all
 
 .PHONY : tests/all
 
 # Convenience name for "clean" pass in the directory.
-tests/clean: tests/CMakeFiles/filetest.dir/clean
+tests/clean: tests/CMakeFiles/loggertest.dir/clean
 
 .PHONY : tests/clean
 
@@ -115,39 +115,39 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/filetest.dir
+# Target rules for target tests/CMakeFiles/loggertest.dir
 
 # All Build rule for target.
-tests/CMakeFiles/filetest.dir/all: CMakeFiles/fuyou_base.dir/all
-	$(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/depend
-	$(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=1,2 "Built target filetest"
-.PHONY : tests/CMakeFiles/filetest.dir/all
+tests/CMakeFiles/loggertest.dir/all: CMakeFiles/fuyou_base.dir/all
+	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/depend
+	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=8,9 "Built target loggertest"
+.PHONY : tests/CMakeFiles/loggertest.dir/all
 
 # Include target in all.
-all: tests/CMakeFiles/filetest.dir/all
+all: tests/CMakeFiles/loggertest.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/filetest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/filetest.dir/all
+tests/CMakeFiles/loggertest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/loggertest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 0
-.PHONY : tests/CMakeFiles/filetest.dir/rule
+.PHONY : tests/CMakeFiles/loggertest.dir/rule
 
 # Convenience name for target.
-filetest: tests/CMakeFiles/filetest.dir/rule
+loggertest: tests/CMakeFiles/loggertest.dir/rule
 
-.PHONY : filetest
-
-# clean rule for target.
-tests/CMakeFiles/filetest.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/clean
-.PHONY : tests/CMakeFiles/filetest.dir/clean
+.PHONY : loggertest
 
 # clean rule for target.
-clean: tests/CMakeFiles/filetest.dir/clean
+tests/CMakeFiles/loggertest.dir/clean:
+	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/clean
+.PHONY : tests/CMakeFiles/loggertest.dir/clean
+
+# clean rule for target.
+clean: tests/CMakeFiles/loggertest.dir/clean
 
 .PHONY : clean
 

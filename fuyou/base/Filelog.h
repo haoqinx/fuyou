@@ -8,18 +8,17 @@ namespace fuyou
 {
 class Filelog : nonecopyable{
 public:
-    Filelog(std::string name, int timeInterval);
+    Filelog(std::string name, int timeInterval = 1024);
     ~Filelog();
 
     void append(const char* str, int len);
     void flush();
-    bool rollFile();
+    
 private:
     void append_unlocked(const char* str, int len);
     const std::string name;
     const int timeInterval;
     int count;
-    std::string name;
     std::unique_ptr<MutexLock> mutex;
     std::unique_ptr<FileUtil> fp;
 };

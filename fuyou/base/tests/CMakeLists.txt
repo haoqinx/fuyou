@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 add_definitions("-Wall -g")
-set(target filetest)
+set(target loggertest)
 add_executable(${target} ${target}.cpp)
 target_link_libraries(${target} fuyou_base)

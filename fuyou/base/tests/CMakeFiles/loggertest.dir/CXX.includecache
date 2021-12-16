@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/hqin/fuyou/fuyou/base/AsynLogging.cpp
-AsynLogging.h
-/home/hqin/fuyou/fuyou/base/AsynLogging.h
-CountDownLatch.h
-/home/hqin/fuyou/fuyou/base/CountDownLatch.h
-assert.h
--
-iostream
--
-
 /home/hqin/fuyou/fuyou/base/AsynLogging.h
 MutexLock.h
 /home/hqin/fuyou/fuyou/base/MutexLock.h
@@ -68,10 +58,6 @@ string.h
 cstdio
 -
 
-/home/hqin/fuyou/fuyou/base/FileUtil.cpp
-FileUtil.h
-/home/hqin/fuyou/fuyou/base/FileUtil.h
-
 /home/hqin/fuyou/fuyou/base/FileUtil.h
 nonecopyable.h
 /home/hqin/fuyou/fuyou/base/nonecopyable.h
@@ -81,10 +67,6 @@ stdio.h
 -
 stddef.h
 -
-
-/home/hqin/fuyou/fuyou/base/Filelog.cpp
-Filelog.h
-/home/hqin/fuyou/fuyou/base/Filelog.h
 
 /home/hqin/fuyou/fuyou/base/Filelog.h
 nonecopyable.h
@@ -96,14 +78,6 @@ FileUtil.h
 memory
 -
 
-/home/hqin/fuyou/fuyou/base/Logger.cpp
-Logger.h
-/home/hqin/fuyou/fuyou/base/Logger.h
-time.h
--
-sys/time.h
--
-
 /home/hqin/fuyou/fuyou/base/Logger.h
 nonecopyable.h
 /home/hqin/fuyou/fuyou/base/nonecopyable.h
@@ -113,10 +87,6 @@ AsynLogging.h
 /home/hqin/fuyou/fuyou/base/AsynLogging.h
 pthread.h
 -
-
-/home/hqin/fuyou/fuyou/base/Logstream.cpp
-Logstream.h
-/home/hqin/fuyou/fuyou/base/Logstream.h
 
 /home/hqin/fuyou/fuyou/base/Logstream.h
 nonecopyable.h
@@ -136,32 +106,6 @@ nonecopyable.h
 pthread.h
 -
 cstdio
--
-
-/home/hqin/fuyou/fuyou/base/Thread.cpp
-Thread.h
-/home/hqin/fuyou/fuyou/base/Thread.h
-assert.h
--
-errno.h
--
-linux/unistd.h
--
-stdint.h
--
-stdio.h
--
-sys/prctl.h
--
-sys/types.h
--
-sys/syscall.h
--
-unistd.h
--
-memory
--
-iostream
 -
 
 /home/hqin/fuyou/fuyou/base/Thread.h
@@ -193,4 +137,16 @@ iostream
 -
 
 /home/hqin/fuyou/fuyou/base/nonecopyable.h
+
+/home/hqin/fuyou/fuyou/base/tests/loggertest.cpp
+iostream
+-
+thread
+-
+syscall.h
+-
+vector
+-
+../Logger.h
+/home/hqin/fuyou/fuyou/base/Logger.h
 

@@ -28,7 +28,7 @@ public:
         return static_cast<int>(end() - cur);
     }
 
-    int getLen(){
+    int getLen()const {
         return static_cast<int>(cur - data);
     }
 
@@ -83,6 +83,9 @@ public:
     }
     const char* getinfo(){
         return buffer.getData();
+    }
+    const logbuf& getBuf()const{
+        return buffer;
     }
 private:
     logbuf buffer;

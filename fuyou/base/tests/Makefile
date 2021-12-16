@@ -111,46 +111,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/filetest.dir/rule:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/filetest.dir/rule
-.PHONY : tests/CMakeFiles/filetest.dir/rule
+tests/CMakeFiles/loggertest.dir/rule:
+	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/loggertest.dir/rule
+.PHONY : tests/CMakeFiles/loggertest.dir/rule
 
 # Convenience name for target.
-filetest: tests/CMakeFiles/filetest.dir/rule
+loggertest: tests/CMakeFiles/loggertest.dir/rule
 
-.PHONY : filetest
+.PHONY : loggertest
 
 # fast build rule for target.
-filetest/fast:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/build
-.PHONY : filetest/fast
+loggertest/fast:
+	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/build
+.PHONY : loggertest/fast
 
-filetest.o: filetest.cpp.o
+loggertest.o: loggertest.cpp.o
 
-.PHONY : filetest.o
+.PHONY : loggertest.o
 
 # target to build an object file
-filetest.cpp.o:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/filetest.cpp.o
-.PHONY : filetest.cpp.o
+loggertest.cpp.o:
+	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
+.PHONY : loggertest.cpp.o
 
-filetest.i: filetest.cpp.i
+loggertest.i: loggertest.cpp.i
 
-.PHONY : filetest.i
+.PHONY : loggertest.i
 
 # target to preprocess a source file
-filetest.cpp.i:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/filetest.cpp.i
-.PHONY : filetest.cpp.i
+loggertest.cpp.i:
+	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.i
+.PHONY : loggertest.cpp.i
 
-filetest.s: filetest.cpp.s
+loggertest.s: loggertest.cpp.s
 
-.PHONY : filetest.s
+.PHONY : loggertest.s
 
 # target to generate assembly for a file
-filetest.cpp.s:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/filetest.cpp.s
-.PHONY : filetest.cpp.s
+loggertest.cpp.s:
+	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.s
+.PHONY : loggertest.cpp.s
 
 # Help Target
 help:
@@ -159,11 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... filetest"
+	@echo "... loggertest"
 	@echo "... edit_cache"
-	@echo "... filetest.o"
-	@echo "... filetest.i"
-	@echo "... filetest.s"
+	@echo "... loggertest.o"
+	@echo "... loggertest.i"
+	@echo "... loggertest.s"
 .PHONY : help
 
 

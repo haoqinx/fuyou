@@ -5,12 +5,36 @@ CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: AsynLogging.cpp
 CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: AsynLogging.h
 CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: Condition.h
 CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: CountDownLatch.h
+CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: CurrentThread.h
+CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: FileUtil.h
+CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: Filelog.h
+CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: Logstream.h
 CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: MutexLock.h
+CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: Thread.h
 CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: nonecopyable.h
 
 CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: FileUtil.cpp
 CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: FileUtil.h
 CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: nonecopyable.h
+
+CMakeFiles/fuyou_base.dir/Filelog.cpp.o: FileUtil.h
+CMakeFiles/fuyou_base.dir/Filelog.cpp.o: Filelog.cpp
+CMakeFiles/fuyou_base.dir/Filelog.cpp.o: Filelog.h
+CMakeFiles/fuyou_base.dir/Filelog.cpp.o: MutexLock.h
+CMakeFiles/fuyou_base.dir/Filelog.cpp.o: nonecopyable.h
+
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: AsynLogging.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Condition.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: CountDownLatch.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: CurrentThread.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: FileUtil.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Filelog.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Logger.cpp
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Logger.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Logstream.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: MutexLock.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: Thread.h
+CMakeFiles/fuyou_base.dir/Logger.cpp.o: nonecopyable.h
 
 CMakeFiles/fuyou_base.dir/Logstream.cpp.o: Logstream.cpp
 CMakeFiles/fuyou_base.dir/Logstream.cpp.o: Logstream.h

@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hqin/fuyou/fuyou/base/AsynLogging.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o"
   "/home/hqin/fuyou/fuyou/base/FileUtil.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o"
+  "/home/hqin/fuyou/fuyou/base/Filelog.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o"
+  "/home/hqin/fuyou/fuyou/base/Logger.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/Logger.cpp.o"
   "/home/hqin/fuyou/fuyou/base/Logstream.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o"
   "/home/hqin/fuyou/fuyou/base/Thread.cpp" "/home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/Thread.cpp.o"
   )

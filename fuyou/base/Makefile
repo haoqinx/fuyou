@@ -124,17 +124,17 @@ fuyou_base/fast:
 .PHONY : fuyou_base/fast
 
 #=============================================================================
-# Target rules for targets named filetest
+# Target rules for targets named loggertest
 
 # Build rule for target.
-filetest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 filetest
-.PHONY : filetest
+loggertest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 loggertest
+.PHONY : loggertest
 
 # fast build rule for target.
-filetest/fast:
-	$(MAKE) -f tests/CMakeFiles/filetest.dir/build.make tests/CMakeFiles/filetest.dir/build
-.PHONY : filetest/fast
+loggertest/fast:
+	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/build
+.PHONY : loggertest/fast
 
 AsynLogging.o: AsynLogging.cpp.o
 
@@ -189,6 +189,60 @@ FileUtil.s: FileUtil.cpp.s
 FileUtil.cpp.s:
 	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/FileUtil.cpp.s
 .PHONY : FileUtil.cpp.s
+
+Filelog.o: Filelog.cpp.o
+
+.PHONY : Filelog.o
+
+# target to build an object file
+Filelog.cpp.o:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.o
+.PHONY : Filelog.cpp.o
+
+Filelog.i: Filelog.cpp.i
+
+.PHONY : Filelog.i
+
+# target to preprocess a source file
+Filelog.cpp.i:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.i
+.PHONY : Filelog.cpp.i
+
+Filelog.s: Filelog.cpp.s
+
+.PHONY : Filelog.s
+
+# target to generate assembly for a file
+Filelog.cpp.s:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.s
+.PHONY : Filelog.cpp.s
+
+Logger.o: Logger.cpp.o
+
+.PHONY : Logger.o
+
+# target to build an object file
+Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.o
+.PHONY : Logger.cpp.o
+
+Logger.i: Logger.cpp.i
+
+.PHONY : Logger.i
+
+# target to preprocess a source file
+Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.i
+.PHONY : Logger.cpp.i
+
+Logger.s: Logger.cpp.s
+
+.PHONY : Logger.s
+
+# target to generate assembly for a file
+Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.s
+.PHONY : Logger.cpp.s
 
 Logstream.o: Logstream.cpp.o
 
@@ -253,13 +307,19 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fuyou_base"
 	@echo "... edit_cache"
-	@echo "... filetest"
+	@echo "... loggertest"
 	@echo "... AsynLogging.o"
 	@echo "... AsynLogging.i"
 	@echo "... AsynLogging.s"
 	@echo "... FileUtil.o"
 	@echo "... FileUtil.i"
 	@echo "... FileUtil.s"
+	@echo "... Filelog.o"
+	@echo "... Filelog.i"
+	@echo "... Filelog.s"
+	@echo "... Logger.o"
+	@echo "... Logger.i"
+	@echo "... Logger.s"
 	@echo "... Logstream.o"
 	@echo "... Logstream.i"
 	@echo "... Logstream.s"

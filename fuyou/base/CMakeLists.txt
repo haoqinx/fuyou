@@ -5,6 +5,9 @@ set(
     AsynLogging.cpp
     Thread.cpp
     FileUtil.cpp
+    AsynLogging.cpp
+    Filelog.cpp
+    Logger.cpp
 )
 add_definitions(-std=c++11)
 add_library(fuyou_base ${LIB_SRC})
