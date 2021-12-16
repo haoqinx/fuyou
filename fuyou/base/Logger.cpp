@@ -27,7 +27,7 @@ void Logger::Impl::formatTime(){
     gettimeofday(&tv, nullptr);
     time = tv.tv_sec;
     struct tm* p_time = localtime(&time);
-    strftime(str_t, 26, "%Y-%m-%d %H:%M:%S\n", p_time);
+    strftime(str_t, 26, "[%Y-%m-%d %H:%M:%S] ", p_time);
     _stream << str_t;
 }
 
@@ -35,7 +35,7 @@ Logger::Logger(const char* filename, int line):_impl(filename, line){
 }
 
 Logger::~Logger(){
-    _impl._stream << "--" << _impl.filename << ':' << _impl.line << '\n';
+    _impl._stream << '[' << _impl.filename << ':' << _impl.line << ']' << '\n';
     const Logstream::logbuf& buf(stream().getBuf());
     _output(buf.getData(), buf.getLen());
 }

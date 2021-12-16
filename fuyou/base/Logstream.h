@@ -63,6 +63,7 @@ public:
     Self& operator<<(int);
     Self& operator<<(unsigned int);
     Self& operator<<(long);
+    Self& operator<<(unsigned long);
     Self& operator<<(long long);
     Self& operator<<(float);
     Self& operator<<(double);

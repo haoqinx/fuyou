@@ -139,14 +139,18 @@ iostream
 /home/hqin/fuyou/fuyou/base/nonecopyable.h
 
 /home/hqin/fuyou/fuyou/base/tests/loggertest.cpp
-iostream
+../Logger.h
+/home/hqin/fuyou/fuyou/base/Logger.h
+../Thread.h
+/home/hqin/fuyou/fuyou/base/Thread.h
+string
 -
-thread
--
-syscall.h
+unistd.h
 -
 vector
 -
-../Logger.h
-/home/hqin/fuyou/fuyou/base/Logger.h
+memory
+-
+iostream
+-
 

@@ -37,15 +37,12 @@ void AsynLogging::threadFunc(){
     bufferTowrite.reserve(16);
 
     while(isRunning){
-        std::cout << "tmpbuf1 cur:" << tmpBuffer1 -> getLen() << std::endl;
         assert(tmpBuffer1 != nullptr);
         assert(tmpBuffer1 -> getLen() == 0);
         assert(tmpBuffer2 != nullptr);
         assert(tmpBuffer2 -> getLen() == 0);
         assert(bufferTowrite.empty());
         {
-            std::cout << "curbuf:" << &(*currentBuffer) << std::endl;
-            std::cout << "nextbuf:" << &(*nextBuffer) << std::endl;
             MutexLockGuard lock(mutex);
             if(buffers.empty()){
                 cond.waitForSeconds(timeInterval);

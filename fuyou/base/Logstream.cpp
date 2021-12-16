@@ -48,6 +48,12 @@ Logstream& Logstream::operator<<(long data){
     formatInteger(data);
     return *this;
 }
+
+Logstream& Logstream::operator<<(unsigned long data){
+    formatInteger(data);
+    return *this;
+}
+
 Logstream& Logstream::operator<<(long long data){
     formatInteger(data);
     return *this;
