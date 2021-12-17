@@ -2,10 +2,13 @@
 #define _EVENTLOOP_H
 #include <functional>
 #include <assert.h>
+#include <sys/epoll.h>
 #include "base/Thread.h"
 #include "Channel.h"
 #include "Util.h"
 #include "Epoll.h"
+#include "Logger.h"
+#include "Util.h"
 
 namespace fuyou
 {

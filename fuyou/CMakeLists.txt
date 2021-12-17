@@ -5,6 +5,7 @@ set(SRCS
     EventLoop.cpp
     Timer.cpp
     Util.cpp
+    EventLoopThread.cpp
     Main.cpp
 )
 include_directories(${PROJECT_SOURCE_DIR}/base)
