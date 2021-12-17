@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles /home/hqin/fuyou/fuyou/base/tests/CMakeFiles/progress.marks
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 0
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles /home/hqin/fuyou/fuyou/base/tests/CMakeFiles/progress.marks
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,32 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/loggertest.dir/rule:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/loggertest.dir/rule
-.PHONY : tests/CMakeFiles/loggertest.dir/rule
+base/tests/CMakeFiles/loggertest.dir/rule:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/tests/CMakeFiles/loggertest.dir/rule
+.PHONY : base/tests/CMakeFiles/loggertest.dir/rule
 
 # Convenience name for target.
-loggertest: tests/CMakeFiles/loggertest.dir/rule
+loggertest: base/tests/CMakeFiles/loggertest.dir/rule
 
 .PHONY : loggertest
 
 # fast build rule for target.
 loggertest/fast:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/build
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/build
 .PHONY : loggertest/fast
 
 loggertest.o: loggertest.cpp.o
@@ -131,7 +131,7 @@ loggertest.o: loggertest.cpp.o
 
 # target to build an object file
 loggertest.cpp.o:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
 .PHONY : loggertest.cpp.o
 
 loggertest.i: loggertest.cpp.i
@@ -140,7 +140,7 @@ loggertest.i: loggertest.cpp.i
 
 # target to preprocess a source file
 loggertest.cpp.i:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.i
 .PHONY : loggertest.cpp.i
 
 loggertest.s: loggertest.cpp.s
@@ -149,7 +149,7 @@ loggertest.s: loggertest.cpp.s
 
 # target to generate assembly for a file
 loggertest.cpp.s:
-	cd /home/hqin/fuyou/fuyou/base && $(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.s
 .PHONY : loggertest.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,42 +43,42 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou
 
 # Include any dependencies generated for this target.
-include tests/CMakeFiles/loggertest.dir/depend.make
+include base/tests/CMakeFiles/loggertest.dir/depend.make
 
 # Include the progress variables for this target.
-include tests/CMakeFiles/loggertest.dir/progress.make
+include base/tests/CMakeFiles/loggertest.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include tests/CMakeFiles/loggertest.dir/flags.make
+include base/tests/CMakeFiles/loggertest.dir/flags.make
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.o: tests/CMakeFiles/loggertest.dir/flags.make
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.o: tests/loggertest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/loggertest.dir/loggertest.cpp.o"
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o: base/tests/CMakeFiles/loggertest.dir/flags.make
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o: base/tests/loggertest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o"
 	cd /home/hqin/fuyou/fuyou/base/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/loggertest.dir/loggertest.cpp.o -c /home/hqin/fuyou/fuyou/base/tests/loggertest.cpp
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.i: cmake_force
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/loggertest.dir/loggertest.cpp.i"
 	cd /home/hqin/fuyou/fuyou/base/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/tests/loggertest.cpp > CMakeFiles/loggertest.dir/loggertest.cpp.i
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.s: cmake_force
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/loggertest.dir/loggertest.cpp.s"
 	cd /home/hqin/fuyou/fuyou/base/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/tests/loggertest.cpp -o CMakeFiles/loggertest.dir/loggertest.cpp.s
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires:
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires:
 
-.PHONY : tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
+.PHONY : base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides: tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
-	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides.build
-.PHONY : tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides: base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
+	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides.build
+.PHONY : base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides
 
-tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides.build: tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
+base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.provides.build: base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
 
 
 # Object files for target loggertest
@@ -88,27 +88,27 @@ loggertest_OBJECTS = \
 # External object files for target loggertest
 loggertest_EXTERNAL_OBJECTS =
 
-tests/loggertest: tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
-tests/loggertest: tests/CMakeFiles/loggertest.dir/build.make
-tests/loggertest: libfuyou_base.a
-tests/loggertest: tests/CMakeFiles/loggertest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable loggertest"
+base/tests/loggertest: base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o
+base/tests/loggertest: base/tests/CMakeFiles/loggertest.dir/build.make
+base/tests/loggertest: base/libfuyou_base.a
+base/tests/loggertest: base/tests/CMakeFiles/loggertest.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable loggertest"
 	cd /home/hqin/fuyou/fuyou/base/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/loggertest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-tests/CMakeFiles/loggertest.dir/build: tests/loggertest
+base/tests/CMakeFiles/loggertest.dir/build: base/tests/loggertest
 
-.PHONY : tests/CMakeFiles/loggertest.dir/build
+.PHONY : base/tests/CMakeFiles/loggertest.dir/build
 
-tests/CMakeFiles/loggertest.dir/requires: tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
+base/tests/CMakeFiles/loggertest.dir/requires: base/tests/CMakeFiles/loggertest.dir/loggertest.cpp.o.requires
 
-.PHONY : tests/CMakeFiles/loggertest.dir/requires
+.PHONY : base/tests/CMakeFiles/loggertest.dir/requires
 
-tests/CMakeFiles/loggertest.dir/clean:
+base/tests/CMakeFiles/loggertest.dir/clean:
 	cd /home/hqin/fuyou/fuyou/base/tests && $(CMAKE_COMMAND) -P CMakeFiles/loggertest.dir/cmake_clean.cmake
-.PHONY : tests/CMakeFiles/loggertest.dir/clean
+.PHONY : base/tests/CMakeFiles/loggertest.dir/clean
 
-tests/CMakeFiles/loggertest.dir/depend:
-	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base/tests /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base/tests /home/hqin/fuyou/fuyou/base/tests/CMakeFiles/loggertest.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : tests/CMakeFiles/loggertest.dir/depend
+base/tests/CMakeFiles/loggertest.dir/depend:
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqin/fuyou/fuyou /home/hqin/fuyou/fuyou/base/tests /home/hqin/fuyou/fuyou /home/hqin/fuyou/fuyou/base/tests /home/hqin/fuyou/fuyou/base/tests/CMakeFiles/loggertest.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : base/tests/CMakeFiles/loggertest.dir/depend
 

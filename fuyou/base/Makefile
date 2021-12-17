@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles /home/hqin/fuyou/fuyou/base/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/base/CMakeFiles 0
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles /home/hqin/fuyou/fuyou/base/CMakeFiles/progress.marks
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named fuyou_base
+# Convenience name for target.
+base/CMakeFiles/fuyou_base.dir/rule:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 base/CMakeFiles/fuyou_base.dir/rule
+.PHONY : base/CMakeFiles/fuyou_base.dir/rule
 
-# Build rule for target.
-fuyou_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fuyou_base
+# Convenience name for target.
+fuyou_base: base/CMakeFiles/fuyou_base.dir/rule
+
 .PHONY : fuyou_base
 
 # fast build rule for target.
 fuyou_base/fast:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/build
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/build
 .PHONY : fuyou_base/fast
-
-#=============================================================================
-# Target rules for targets named loggertest
-
-# Build rule for target.
-loggertest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 loggertest
-.PHONY : loggertest
-
-# fast build rule for target.
-loggertest/fast:
-	$(MAKE) -f tests/CMakeFiles/loggertest.dir/build.make tests/CMakeFiles/loggertest.dir/build
-.PHONY : loggertest/fast
 
 AsynLogging.o: AsynLogging.cpp.o
 
@@ -142,7 +131,7 @@ AsynLogging.o: AsynLogging.cpp.o
 
 # target to build an object file
 AsynLogging.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
 .PHONY : AsynLogging.cpp.o
 
 AsynLogging.i: AsynLogging.cpp.i
@@ -151,7 +140,7 @@ AsynLogging.i: AsynLogging.cpp.i
 
 # target to preprocess a source file
 AsynLogging.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i
 .PHONY : AsynLogging.cpp.i
 
 AsynLogging.s: AsynLogging.cpp.s
@@ -160,7 +149,7 @@ AsynLogging.s: AsynLogging.cpp.s
 
 # target to generate assembly for a file
 AsynLogging.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s
 .PHONY : AsynLogging.cpp.s
 
 FileUtil.o: FileUtil.cpp.o
@@ -169,7 +158,7 @@ FileUtil.o: FileUtil.cpp.o
 
 # target to build an object file
 FileUtil.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
 .PHONY : FileUtil.cpp.o
 
 FileUtil.i: FileUtil.cpp.i
@@ -178,7 +167,7 @@ FileUtil.i: FileUtil.cpp.i
 
 # target to preprocess a source file
 FileUtil.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/FileUtil.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.i
 .PHONY : FileUtil.cpp.i
 
 FileUtil.s: FileUtil.cpp.s
@@ -187,7 +176,7 @@ FileUtil.s: FileUtil.cpp.s
 
 # target to generate assembly for a file
 FileUtil.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/FileUtil.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.s
 .PHONY : FileUtil.cpp.s
 
 Filelog.o: Filelog.cpp.o
@@ -196,7 +185,7 @@ Filelog.o: Filelog.cpp.o
 
 # target to build an object file
 Filelog.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o
 .PHONY : Filelog.cpp.o
 
 Filelog.i: Filelog.cpp.i
@@ -205,7 +194,7 @@ Filelog.i: Filelog.cpp.i
 
 # target to preprocess a source file
 Filelog.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Filelog.cpp.i
 .PHONY : Filelog.cpp.i
 
 Filelog.s: Filelog.cpp.s
@@ -214,7 +203,7 @@ Filelog.s: Filelog.cpp.s
 
 # target to generate assembly for a file
 Filelog.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Filelog.cpp.s
 .PHONY : Filelog.cpp.s
 
 Logger.o: Logger.cpp.o
@@ -223,7 +212,7 @@ Logger.o: Logger.cpp.o
 
 # target to build an object file
 Logger.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logger.cpp.o
 .PHONY : Logger.cpp.o
 
 Logger.i: Logger.cpp.i
@@ -232,7 +221,7 @@ Logger.i: Logger.cpp.i
 
 # target to preprocess a source file
 Logger.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logger.cpp.i
 .PHONY : Logger.cpp.i
 
 Logger.s: Logger.cpp.s
@@ -241,7 +230,7 @@ Logger.s: Logger.cpp.s
 
 # target to generate assembly for a file
 Logger.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logger.cpp.s
 .PHONY : Logger.cpp.s
 
 Logstream.o: Logstream.cpp.o
@@ -250,7 +239,7 @@ Logstream.o: Logstream.cpp.o
 
 # target to build an object file
 Logstream.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logstream.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o
 .PHONY : Logstream.cpp.o
 
 Logstream.i: Logstream.cpp.i
@@ -259,7 +248,7 @@ Logstream.i: Logstream.cpp.i
 
 # target to preprocess a source file
 Logstream.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logstream.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logstream.cpp.i
 .PHONY : Logstream.cpp.i
 
 Logstream.s: Logstream.cpp.s
@@ -268,7 +257,7 @@ Logstream.s: Logstream.cpp.s
 
 # target to generate assembly for a file
 Logstream.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logstream.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logstream.cpp.s
 .PHONY : Logstream.cpp.s
 
 Thread.o: Thread.cpp.o
@@ -277,7 +266,7 @@ Thread.o: Thread.cpp.o
 
 # target to build an object file
 Thread.cpp.o:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Thread.cpp.o
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Thread.cpp.o
 .PHONY : Thread.cpp.o
 
 Thread.i: Thread.cpp.i
@@ -286,7 +275,7 @@ Thread.i: Thread.cpp.i
 
 # target to preprocess a source file
 Thread.cpp.i:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Thread.cpp.i
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Thread.cpp.i
 .PHONY : Thread.cpp.i
 
 Thread.s: Thread.cpp.s
@@ -295,7 +284,7 @@ Thread.s: Thread.cpp.s
 
 # target to generate assembly for a file
 Thread.cpp.s:
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Thread.cpp.s
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Thread.cpp.s
 .PHONY : Thread.cpp.s
 
 # Help Target
@@ -307,7 +296,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fuyou_base"
 	@echo "... edit_cache"
-	@echo "... loggertest"
 	@echo "... AsynLogging.o"
 	@echo "... AsynLogging.i"
 	@echo "... AsynLogging.s"
@@ -337,6 +325,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

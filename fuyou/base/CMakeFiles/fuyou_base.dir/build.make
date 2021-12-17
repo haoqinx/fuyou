@@ -43,162 +43,162 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou/base
+CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou
 
 # Include any dependencies generated for this target.
-include CMakeFiles/fuyou_base.dir/depend.make
+include base/CMakeFiles/fuyou_base.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/fuyou_base.dir/progress.make
+include base/CMakeFiles/fuyou_base.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/fuyou_base.dir/flags.make
+include base/CMakeFiles/fuyou_base.dir/flags.make
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/Logstream.cpp.o: Logstream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fuyou_base.dir/Logstream.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Logstream.cpp.o -c /home/hqin/fuyou/fuyou/base/Logstream.cpp
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o: base/Logstream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Logstream.cpp.o -c /home/hqin/fuyou/fuyou/base/Logstream.cpp
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/Logstream.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Logstream.cpp > CMakeFiles/fuyou_base.dir/Logstream.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Logstream.cpp > CMakeFiles/fuyou_base.dir/Logstream.cpp.i
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/Logstream.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Logstream.cpp -o CMakeFiles/fuyou_base.dir/Logstream.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Logstream.cpp -o CMakeFiles/fuyou_base.dir/Logstream.cpp.s
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides: CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/Logstream.cpp.o
+base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o
 
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: AsynLogging.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o -c /home/hqin/fuyou/fuyou/base/AsynLogging.cpp
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o: base/AsynLogging.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o -c /home/hqin/fuyou/fuyou/base/AsynLogging.cpp
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/AsynLogging.cpp > CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/AsynLogging.cpp > CMakeFiles/fuyou_base.dir/AsynLogging.cpp.i
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/AsynLogging.cpp -o CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/AsynLogging.cpp -o CMakeFiles/fuyou_base.dir/AsynLogging.cpp.s
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides: CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
+base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
 
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/Thread.cpp.o: Thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fuyou_base.dir/Thread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Thread.cpp.o -c /home/hqin/fuyou/fuyou/base/Thread.cpp
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.o: base/Thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object base/CMakeFiles/fuyou_base.dir/Thread.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Thread.cpp.o -c /home/hqin/fuyou/fuyou/base/Thread.cpp
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/Thread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Thread.cpp > CMakeFiles/fuyou_base.dir/Thread.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Thread.cpp > CMakeFiles/fuyou_base.dir/Thread.cpp.i
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/Thread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Thread.cpp -o CMakeFiles/fuyou_base.dir/Thread.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Thread.cpp -o CMakeFiles/fuyou_base.dir/Thread.cpp.s
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides: CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/Thread.cpp.o
+base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/Thread.cpp.o
 
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: FileUtil.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fuyou_base.dir/FileUtil.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/FileUtil.cpp.o -c /home/hqin/fuyou/fuyou/base/FileUtil.cpp
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o: base/FileUtil.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/FileUtil.cpp.o -c /home/hqin/fuyou/fuyou/base/FileUtil.cpp
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/FileUtil.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/FileUtil.cpp > CMakeFiles/fuyou_base.dir/FileUtil.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/FileUtil.cpp > CMakeFiles/fuyou_base.dir/FileUtil.cpp.i
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/FileUtil.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/FileUtil.cpp -o CMakeFiles/fuyou_base.dir/FileUtil.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/FileUtil.cpp -o CMakeFiles/fuyou_base.dir/FileUtil.cpp.s
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides: CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
+base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
 
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/Filelog.cpp.o: Filelog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fuyou_base.dir/Filelog.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Filelog.cpp.o -c /home/hqin/fuyou/fuyou/base/Filelog.cpp
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o: base/Filelog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Filelog.cpp.o -c /home/hqin/fuyou/fuyou/base/Filelog.cpp
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/Filelog.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Filelog.cpp > CMakeFiles/fuyou_base.dir/Filelog.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Filelog.cpp > CMakeFiles/fuyou_base.dir/Filelog.cpp.i
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/Filelog.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Filelog.cpp -o CMakeFiles/fuyou_base.dir/Filelog.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Filelog.cpp -o CMakeFiles/fuyou_base.dir/Filelog.cpp.s
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides: CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/Filelog.cpp.o
+base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o
 
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.o: CMakeFiles/fuyou_base.dir/flags.make
-CMakeFiles/fuyou_base.dir/Logger.cpp.o: Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fuyou_base.dir/Logger.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Logger.cpp.o -c /home/hqin/fuyou/fuyou/base/Logger.cpp
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.o: base/CMakeFiles/fuyou_base.dir/flags.make
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.o: base/Logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object base/CMakeFiles/fuyou_base.dir/Logger.cpp.o"
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fuyou_base.dir/Logger.cpp.o -c /home/hqin/fuyou/fuyou/base/Logger.cpp
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.i: cmake_force
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuyou_base.dir/Logger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Logger.cpp > CMakeFiles/fuyou_base.dir/Logger.cpp.i
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/base/Logger.cpp > CMakeFiles/fuyou_base.dir/Logger.cpp.i
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.s: cmake_force
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuyou_base.dir/Logger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Logger.cpp -o CMakeFiles/fuyou_base.dir/Logger.cpp.s
+	cd /home/hqin/fuyou/fuyou/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/base/Logger.cpp -o CMakeFiles/fuyou_base.dir/Logger.cpp.s
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires:
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires:
 
-.PHONY : CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides: CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
-	$(MAKE) -f CMakeFiles/fuyou_base.dir/build.make CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides.build
-.PHONY : CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides: base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides.build
+.PHONY : base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides
 
-CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides.build: CMakeFiles/fuyou_base.dir/Logger.cpp.o
+base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.provides.build: base/CMakeFiles/fuyou_base.dir/Logger.cpp.o
 
 
 # Object files for target fuyou_base
@@ -213,37 +213,37 @@ fuyou_base_OBJECTS = \
 # External object files for target fuyou_base
 fuyou_base_EXTERNAL_OBJECTS =
 
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/Logstream.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/Thread.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/Filelog.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/Logger.cpp.o
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/build.make
-libfuyou_base.a: CMakeFiles/fuyou_base.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/base/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libfuyou_base.a"
-	$(CMAKE_COMMAND) -P CMakeFiles/fuyou_base.dir/cmake_clean_target.cmake
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fuyou_base.dir/link.txt --verbose=$(VERBOSE)
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/Thread.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/Logger.cpp.o
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/build.make
+base/libfuyou_base.a: base/CMakeFiles/fuyou_base.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libfuyou_base.a"
+	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -P CMakeFiles/fuyou_base.dir/cmake_clean_target.cmake
+	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fuyou_base.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/fuyou_base.dir/build: libfuyou_base.a
+base/CMakeFiles/fuyou_base.dir/build: base/libfuyou_base.a
 
-.PHONY : CMakeFiles/fuyou_base.dir/build
+.PHONY : base/CMakeFiles/fuyou_base.dir/build
 
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
-CMakeFiles/fuyou_base.dir/requires: CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/Logstream.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/Thread.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/FileUtil.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/Filelog.cpp.o.requires
+base/CMakeFiles/fuyou_base.dir/requires: base/CMakeFiles/fuyou_base.dir/Logger.cpp.o.requires
 
-.PHONY : CMakeFiles/fuyou_base.dir/requires
+.PHONY : base/CMakeFiles/fuyou_base.dir/requires
 
-CMakeFiles/fuyou_base.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/fuyou_base.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/fuyou_base.dir/clean
+base/CMakeFiles/fuyou_base.dir/clean:
+	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -P CMakeFiles/fuyou_base.dir/cmake_clean.cmake
+.PHONY : base/CMakeFiles/fuyou_base.dir/clean
 
-CMakeFiles/fuyou_base.dir/depend:
-	cd /home/hqin/fuyou/fuyou/base && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/fuyou_base.dir/depend
+base/CMakeFiles/fuyou_base.dir/depend:
+	cd /home/hqin/fuyou/fuyou && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqin/fuyou/fuyou /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou /home/hqin/fuyou/fuyou/base /home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : base/CMakeFiles/fuyou_base.dir/depend
 
