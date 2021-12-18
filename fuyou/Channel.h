@@ -80,7 +80,7 @@ public:
     }
 
     bool equalAndUpdatelastEvents(){
-         bool ret = (lastEvents == events);
+        bool ret = (lastEvents == events);
         lastEvents = events;
         return ret;
     }
