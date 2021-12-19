@@ -17,8 +17,8 @@ void func(test&& t){
     cout << "func " << t.a << endl;
 }
 int main(){
-    test sss(10);
-    func(std::move(sss));
-    cout << "???";
-    return 0;
+    EventLoop loop;
+    Server server(&loop, 4, 6666);
+    server.start();
+    loop.loop();
 }

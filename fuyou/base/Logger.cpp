@@ -1,7 +1,6 @@
 #include "Logger.h"
 #include <time.h>
 #include <sys/time.h>
-#include 
 namespace fuyou
 {
 static AsynLogging* _AsynLogger;

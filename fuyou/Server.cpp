@@ -17,6 +17,7 @@ Server::Server(EventLoop* loop, int numthread, int port)
                 _port(port),
                 _listenfd(socket_bind_listen(_port)){
     _acceptChannel -> setfd(_listenfd);
+    //为了避免两次write造成进程关闭
     handle_for_sigpipe();
     if(setSocketNonBlocking(_listenfd) < 0){
         perror("set socket non block error");
@@ -52,7 +53,7 @@ void Server::handleNewConn(){
             return;
         }
         setSocketNodelay(acceptfd);
-
+        
         // std::shared_ptr<HttpData> req_info(new HttpData(_loop, acceptfd));
         // req_info->getChannel()->setHolder(req_info);
         // loop->queueInLoop(std::bind(&HttpData::newEvent, req_info));
