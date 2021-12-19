@@ -77,6 +77,7 @@ public:
     
     void append(const char* data, int len){
         buffer.append(data, len + 1);
+        std::cout << data;
     }
 
     void resetBuffer(){
