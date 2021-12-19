@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hqin/fuyou/fuyou/Channel.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/Channel.cpp.o"
   "/home/hqin/fuyou/fuyou/Epoll.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/Epoll.cpp.o"
   "/home/hqin/fuyou/fuyou/EventLoop.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/EventLoop.cpp.o"
+  "/home/hqin/fuyou/fuyou/EventLoopThread.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/EventLoopThread.cpp.o"
+  "/home/hqin/fuyou/fuyou/EventLoopThreadPool.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o"
   "/home/hqin/fuyou/fuyou/Main.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/Main.cpp.o"
   "/home/hqin/fuyou/fuyou/Timer.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/Timer.cpp.o"
   "/home/hqin/fuyou/fuyou/Util.cpp" "/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir/Util.cpp.o"

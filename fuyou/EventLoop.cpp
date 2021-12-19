@@ -22,7 +22,7 @@ EventLoop::EventLoop():_looping(false),
                         _threadId(CurrentThread::tid()),
                         _pwakeupChannel(new Channel(this, _wakeupfd)){
     if(t_loopInthisThread){
-        LOG << "Another EventLoop " << t_loopInthisThread << " exists in this thread " << _threadId;
+        LOG << "Another EventLoop " << t_loopInthisThread->_threadId << " exists in this thread " << _threadId;
     }
     else{
         t_loopInthisThread = this;
@@ -61,7 +61,7 @@ void EventLoop::handleRead(){
 }
 
 void EventLoop::runInLoop(Functor&& cb){
-    if(isRunInLoop){
+    if((isRunInLoop())){
         cb();
     }
     else{
@@ -76,6 +76,48 @@ void EventLoop::queueInLoop(Functor&& cb){
     }
     
     if(!isRunInLoop() || _callingPendingFunctors){
+        wakeup();
+    }
+}
+
+void EventLoop::loop(){
+    assert(!_looping);
+    assert(isRunInLoop());
+    _looping = true;
+    _quit = false;
+
+    std::vector<SP_Channel> ret;
+    while(!_quit){
+        ret.clear();
+        ret = _poller -> poll();
+        _eventHandling = true;
+        for(auto& it : ret){
+            it -> handleEvents();
+        }
+        _eventHandling = false;
+        doPendingFunctors();
+        _poller -> handleExpired();
+    }
+    _looping = true;
+}
+
+void EventLoop::doPendingFunctors(){
+    std::vector<Functor> functors;
+    _callingPendingFunctors = true;
+    {
+        MutexLockGuard lock(_mutex);
+        functors.swap(_pendingFunctors);
+    }
+    for(size_t i = 0; i < functors.size(); ++ i){
+        functors[i]();
+    }
+    _callingPendingFunctors = false;
+
+}
+
+void EventLoop::quit(){
+    _quit = true;
+    if(!isRunInLoop()){
         wakeup();
     }
 }

@@ -1,13 +1,13 @@
 #ifndef _EVENTLOOP_THREAD_H
 #define _EVENTLOOP_THREAD_H
-#include "base/nocopyable.hpp"
+#include "base/nonecopyable.h"
 #include "EventLoop.h"
 #include "base/Thread.h"
 #include "base/MutexLock.h"
 #include "base/Condition.h"
 namespace fuyou
 {
-class EventLoopThread : noncopyable{
+class EventLoopThread : nonecopyable{
 public:
     EventLoopThread();
     ~EventLoopThread();

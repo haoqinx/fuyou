@@ -177,9 +177,57 @@ CMakeFiles/servertest.dir/Util.cpp.o.provides: CMakeFiles/servertest.dir/Util.cp
 CMakeFiles/servertest.dir/Util.cpp.o.provides.build: CMakeFiles/servertest.dir/Util.cpp.o
 
 
+CMakeFiles/servertest.dir/EventLoopThread.cpp.o: CMakeFiles/servertest.dir/flags.make
+CMakeFiles/servertest.dir/EventLoopThread.cpp.o: EventLoopThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/servertest.dir/EventLoopThread.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servertest.dir/EventLoopThread.cpp.o -c /home/hqin/fuyou/fuyou/EventLoopThread.cpp
+
+CMakeFiles/servertest.dir/EventLoopThread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servertest.dir/EventLoopThread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/EventLoopThread.cpp > CMakeFiles/servertest.dir/EventLoopThread.cpp.i
+
+CMakeFiles/servertest.dir/EventLoopThread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servertest.dir/EventLoopThread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/EventLoopThread.cpp -o CMakeFiles/servertest.dir/EventLoopThread.cpp.s
+
+CMakeFiles/servertest.dir/EventLoopThread.cpp.o.requires:
+
+.PHONY : CMakeFiles/servertest.dir/EventLoopThread.cpp.o.requires
+
+CMakeFiles/servertest.dir/EventLoopThread.cpp.o.provides: CMakeFiles/servertest.dir/EventLoopThread.cpp.o.requires
+	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThread.cpp.o.provides.build
+.PHONY : CMakeFiles/servertest.dir/EventLoopThread.cpp.o.provides
+
+CMakeFiles/servertest.dir/EventLoopThread.cpp.o.provides.build: CMakeFiles/servertest.dir/EventLoopThread.cpp.o
+
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o: CMakeFiles/servertest.dir/flags.make
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o: EventLoopThreadPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o -c /home/hqin/fuyou/fuyou/EventLoopThreadPool.cpp
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/EventLoopThreadPool.cpp > CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.i
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/EventLoopThreadPool.cpp -o CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.s
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.requires:
+
+.PHONY : CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.requires
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.provides: CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.requires
+	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.provides.build
+.PHONY : CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.provides
+
+CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.provides.build: CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o
+
+
 CMakeFiles/servertest.dir/Main.cpp.o: CMakeFiles/servertest.dir/flags.make
 CMakeFiles/servertest.dir/Main.cpp.o: Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/servertest.dir/Main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/servertest.dir/Main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servertest.dir/Main.cpp.o -c /home/hqin/fuyou/fuyou/Main.cpp
 
 CMakeFiles/servertest.dir/Main.cpp.i: cmake_force
@@ -208,6 +256,8 @@ servertest_OBJECTS = \
 "CMakeFiles/servertest.dir/EventLoop.cpp.o" \
 "CMakeFiles/servertest.dir/Timer.cpp.o" \
 "CMakeFiles/servertest.dir/Util.cpp.o" \
+"CMakeFiles/servertest.dir/EventLoopThread.cpp.o" \
+"CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o" \
 "CMakeFiles/servertest.dir/Main.cpp.o"
 
 # External object files for target servertest
@@ -218,11 +268,13 @@ servertest: CMakeFiles/servertest.dir/Epoll.cpp.o
 servertest: CMakeFiles/servertest.dir/EventLoop.cpp.o
 servertest: CMakeFiles/servertest.dir/Timer.cpp.o
 servertest: CMakeFiles/servertest.dir/Util.cpp.o
+servertest: CMakeFiles/servertest.dir/EventLoopThread.cpp.o
+servertest: CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o
 servertest: CMakeFiles/servertest.dir/Main.cpp.o
 servertest: CMakeFiles/servertest.dir/build.make
 servertest: base/libfuyou_base.a
 servertest: CMakeFiles/servertest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable servertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable servertest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/servertest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -235,6 +287,8 @@ CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/Epoll.cpp.o.requir
 CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/EventLoop.cpp.o.requires
 CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/Timer.cpp.o.requires
 CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/Util.cpp.o.requires
+CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/EventLoopThread.cpp.o.requires
+CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o.requires
 CMakeFiles/servertest.dir/requires: CMakeFiles/servertest.dir/Main.cpp.o.requires
 
 .PHONY : CMakeFiles/servertest.dir/requires
