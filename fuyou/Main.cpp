@@ -1,5 +1,8 @@
 #include <iostream>
 #include "EventLoop.h"
+#include "EventLoopThread.h"
+#include "EventLoopThreadPool.h"
+#include "Server.h"
 using namespace fuyou;
 using namespace std;
 class test{

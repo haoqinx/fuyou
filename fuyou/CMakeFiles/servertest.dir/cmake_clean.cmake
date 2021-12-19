@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/servertest.dir/Util.cpp.o"
   "CMakeFiles/servertest.dir/EventLoopThread.cpp.o"
   "CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o"
+  "CMakeFiles/servertest.dir/Server.cpp.o"
   "CMakeFiles/servertest.dir/Main.cpp.o"
   "servertest.pdb"
   "servertest"
