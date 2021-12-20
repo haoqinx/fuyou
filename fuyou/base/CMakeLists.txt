@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 set(
     LIB_SRC
-    Logstream.cpp
-    AsynLogging.cpp
-    Thread.cpp
-    FileUtil.cpp
     AsynLogging.cpp
     Filelog.cpp
+    FileUtil.cpp
     Logger.cpp
+    Logstream.cpp
+    Thread.cpp
 )
 add_definitions(-std=c++11)
 add_library(fuyou_base ${LIB_SRC})

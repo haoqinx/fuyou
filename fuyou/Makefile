@@ -149,140 +149,18 @@ loggertest/fast:
 	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/build
 .PHONY : loggertest/fast
 
-Channel.o: Channel.cpp.o
+#=============================================================================
+# Target rules for targets named fuyou_net
 
-.PHONY : Channel.o
+# Build rule for target.
+fuyou_net: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fuyou_net
+.PHONY : fuyou_net
 
-# target to build an object file
-Channel.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Channel.cpp.o
-.PHONY : Channel.cpp.o
-
-Channel.i: Channel.cpp.i
-
-.PHONY : Channel.i
-
-# target to preprocess a source file
-Channel.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Channel.cpp.i
-.PHONY : Channel.cpp.i
-
-Channel.s: Channel.cpp.s
-
-.PHONY : Channel.s
-
-# target to generate assembly for a file
-Channel.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Channel.cpp.s
-.PHONY : Channel.cpp.s
-
-Epoll.o: Epoll.cpp.o
-
-.PHONY : Epoll.o
-
-# target to build an object file
-Epoll.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Epoll.cpp.o
-.PHONY : Epoll.cpp.o
-
-Epoll.i: Epoll.cpp.i
-
-.PHONY : Epoll.i
-
-# target to preprocess a source file
-Epoll.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Epoll.cpp.i
-.PHONY : Epoll.cpp.i
-
-Epoll.s: Epoll.cpp.s
-
-.PHONY : Epoll.s
-
-# target to generate assembly for a file
-Epoll.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Epoll.cpp.s
-.PHONY : Epoll.cpp.s
-
-EventLoop.o: EventLoop.cpp.o
-
-.PHONY : EventLoop.o
-
-# target to build an object file
-EventLoop.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoop.cpp.o
-.PHONY : EventLoop.cpp.o
-
-EventLoop.i: EventLoop.cpp.i
-
-.PHONY : EventLoop.i
-
-# target to preprocess a source file
-EventLoop.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoop.cpp.i
-.PHONY : EventLoop.cpp.i
-
-EventLoop.s: EventLoop.cpp.s
-
-.PHONY : EventLoop.s
-
-# target to generate assembly for a file
-EventLoop.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoop.cpp.s
-.PHONY : EventLoop.cpp.s
-
-EventLoopThread.o: EventLoopThread.cpp.o
-
-.PHONY : EventLoopThread.o
-
-# target to build an object file
-EventLoopThread.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThread.cpp.o
-.PHONY : EventLoopThread.cpp.o
-
-EventLoopThread.i: EventLoopThread.cpp.i
-
-.PHONY : EventLoopThread.i
-
-# target to preprocess a source file
-EventLoopThread.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThread.cpp.i
-.PHONY : EventLoopThread.cpp.i
-
-EventLoopThread.s: EventLoopThread.cpp.s
-
-.PHONY : EventLoopThread.s
-
-# target to generate assembly for a file
-EventLoopThread.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThread.cpp.s
-.PHONY : EventLoopThread.cpp.s
-
-EventLoopThreadPool.o: EventLoopThreadPool.cpp.o
-
-.PHONY : EventLoopThreadPool.o
-
-# target to build an object file
-EventLoopThreadPool.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.o
-.PHONY : EventLoopThreadPool.cpp.o
-
-EventLoopThreadPool.i: EventLoopThreadPool.cpp.i
-
-.PHONY : EventLoopThreadPool.i
-
-# target to preprocess a source file
-EventLoopThreadPool.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.i
-.PHONY : EventLoopThreadPool.cpp.i
-
-EventLoopThreadPool.s: EventLoopThreadPool.cpp.s
-
-.PHONY : EventLoopThreadPool.s
-
-# target to generate assembly for a file
-EventLoopThreadPool.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/EventLoopThreadPool.cpp.s
-.PHONY : EventLoopThreadPool.cpp.s
+# fast build rule for target.
+fuyou_net/fast:
+	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/build
+.PHONY : fuyou_net/fast
 
 Main.o: Main.cpp.o
 
@@ -311,87 +189,6 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-Server.o: Server.cpp.o
-
-.PHONY : Server.o
-
-# target to build an object file
-Server.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Server.cpp.o
-.PHONY : Server.cpp.o
-
-Server.i: Server.cpp.i
-
-.PHONY : Server.i
-
-# target to preprocess a source file
-Server.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Server.cpp.i
-.PHONY : Server.cpp.i
-
-Server.s: Server.cpp.s
-
-.PHONY : Server.s
-
-# target to generate assembly for a file
-Server.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Server.cpp.s
-.PHONY : Server.cpp.s
-
-Timer.o: Timer.cpp.o
-
-.PHONY : Timer.o
-
-# target to build an object file
-Timer.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Timer.cpp.o
-.PHONY : Timer.cpp.o
-
-Timer.i: Timer.cpp.i
-
-.PHONY : Timer.i
-
-# target to preprocess a source file
-Timer.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Timer.cpp.i
-.PHONY : Timer.cpp.i
-
-Timer.s: Timer.cpp.s
-
-.PHONY : Timer.s
-
-# target to generate assembly for a file
-Timer.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Timer.cpp.s
-.PHONY : Timer.cpp.s
-
-Util.o: Util.cpp.o
-
-.PHONY : Util.o
-
-# target to build an object file
-Util.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Util.cpp.o
-.PHONY : Util.cpp.o
-
-Util.i: Util.cpp.i
-
-.PHONY : Util.i
-
-# target to preprocess a source file
-Util.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Util.cpp.i
-.PHONY : Util.cpp.i
-
-Util.s: Util.cpp.s
-
-.PHONY : Util.s
-
-# target to generate assembly for a file
-Util.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Util.cpp.s
-.PHONY : Util.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -403,33 +200,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... fuyou_base"
 	@echo "... loggertest"
-	@echo "... Channel.o"
-	@echo "... Channel.i"
-	@echo "... Channel.s"
-	@echo "... Epoll.o"
-	@echo "... Epoll.i"
-	@echo "... Epoll.s"
-	@echo "... EventLoop.o"
-	@echo "... EventLoop.i"
-	@echo "... EventLoop.s"
-	@echo "... EventLoopThread.o"
-	@echo "... EventLoopThread.i"
-	@echo "... EventLoopThread.s"
-	@echo "... EventLoopThreadPool.o"
-	@echo "... EventLoopThreadPool.i"
-	@echo "... EventLoopThreadPool.s"
+	@echo "... fuyou_net"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
-	@echo "... Server.o"
-	@echo "... Server.i"
-	@echo "... Server.s"
-	@echo "... Timer.o"
-	@echo "... Timer.i"
-	@echo "... Timer.s"
-	@echo "... Util.o"
-	@echo "... Util.i"
-	@echo "... Util.s"
 .PHONY : help
 
 

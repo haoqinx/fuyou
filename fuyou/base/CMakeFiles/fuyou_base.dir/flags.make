@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hqin/fuyou/fuyou/base 
+CXX_INCLUDES = -I/home/hqin/fuyou/fuyou/base -I/home/hqin/fuyou/fuyou/net 
 

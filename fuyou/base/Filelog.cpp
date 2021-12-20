@@ -3,10 +3,10 @@
 namespace fuyou
 {
 Filelog::Filelog(const std::string name, int timeInterval)
-                :name(name),timeInterval(timeInterval),
+                :name(name),
+                timeInterval(timeInterval),
                 count(0),
-                mutex(new MutexLock())
-                {
+                mutex(new MutexLock()){
     fp.reset(new FileUtil(name));
 }
 

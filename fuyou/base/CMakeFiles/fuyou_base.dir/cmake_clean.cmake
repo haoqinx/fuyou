@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fuyou_base.dir/Logstream.cpp.o"
   "CMakeFiles/fuyou_base.dir/AsynLogging.cpp.o"
-  "CMakeFiles/fuyou_base.dir/Thread.cpp.o"
-  "CMakeFiles/fuyou_base.dir/FileUtil.cpp.o"
   "CMakeFiles/fuyou_base.dir/Filelog.cpp.o"
+  "CMakeFiles/fuyou_base.dir/FileUtil.cpp.o"
   "CMakeFiles/fuyou_base.dir/Logger.cpp.o"
+  "CMakeFiles/fuyou_base.dir/Logstream.cpp.o"
+  "CMakeFiles/fuyou_base.dir/Thread.cpp.o"
   "libfuyou_base.pdb"
   "libfuyou_base.a"
 )

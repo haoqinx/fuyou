@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeLists.txt"
   "base/CMakeLists.txt"
   "base/tests/CMakeLists.txt"
+  "net/CMakeLists.txt"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"
@@ -42,6 +43,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "net/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -49,4 +51,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/servertest.dir/DependInfo.cmake"
   "base/CMakeFiles/fuyou_base.dir/DependInfo.cmake"
   "base/tests/CMakeFiles/loggertest.dir/DependInfo.cmake"
+  "net/CMakeFiles/fuyou_net.dir/DependInfo.cmake"
   )

@@ -1,21 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 set(SRCS
-    Channel.cpp
-    Epoll.cpp
-    EventLoop.cpp
-    Timer.cpp
-    Util.cpp
-    EventLoopThread.cpp
-    Timer.cpp
-    EventLoopThreadPool.cpp
-    Server.cpp
     Main.cpp
 )
 include_directories(${PROJECT_SOURCE_DIR}/base)
-
+include_directories(${PROJECT_SOURCE_DIR}/net)
 
 add_executable(servertest ${SRCS})
-target_link_libraries(servertest fuyou_base)
-
-
+target_link_libraries(servertest fuyou_net)
 add_subdirectory(base)
+add_subdirectory(net)
