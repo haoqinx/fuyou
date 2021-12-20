@@ -64,7 +64,7 @@ void EventLoop::handleRead(){
 }
 
 void EventLoop::runInLoop(Functor&& cb){
-    if((isRunInLoop())){
+    if(isRunInLoop()){
         cb();
     }
     else{
