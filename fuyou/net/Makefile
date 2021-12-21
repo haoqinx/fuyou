@@ -287,6 +287,33 @@ Server.cpp.s:
 	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
+Tcpconn.o: Tcpconn.cpp.o
+
+.PHONY : Tcpconn.o
+
+# target to build an object file
+Tcpconn.cpp.o:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o
+.PHONY : Tcpconn.cpp.o
+
+Tcpconn.i: Tcpconn.cpp.i
+
+.PHONY : Tcpconn.i
+
+# target to preprocess a source file
+Tcpconn.cpp.i:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.i
+.PHONY : Tcpconn.cpp.i
+
+Tcpconn.s: Tcpconn.cpp.s
+
+.PHONY : Tcpconn.s
+
+# target to generate assembly for a file
+Tcpconn.cpp.s:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.s
+.PHONY : Tcpconn.cpp.s
+
 Timer.o: Timer.cpp.o
 
 .PHONY : Timer.o
@@ -368,6 +395,9 @@ help:
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"
+	@echo "... Tcpconn.o"
+	@echo "... Tcpconn.i"
+	@echo "... Tcpconn.s"
 	@echo "... Timer.o"
 	@echo "... Timer.i"
 	@echo "... Timer.s"

@@ -10,6 +10,7 @@ set(
     Timer.cpp
     EventLoopThreadPool.cpp
     Server.cpp
+    Tcpconn.cpp
 )
 
 add_definitions(-std=c++11)

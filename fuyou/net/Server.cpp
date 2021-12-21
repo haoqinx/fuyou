@@ -6,6 +6,7 @@
 #include <functional>
 #include "../base/Logger.h"
 
+
 namespace fuyou
 {
 Server::Server(EventLoop* loop, int numthread, int port)
@@ -56,6 +57,8 @@ void Server::handleNewConn(){
         }
         setSocketNodelay(acceptfd);
 
+        std::shared_ptr<Tcpconn> conn(new Tcpconn(loop, acceptfd));
+        loop -> queueInLoop(std::bind(&Tcpconn::newEvent, conn));
         // std::shared_ptr<HttpData> req_info(new HttpData(_loop, acceptfd));
         // req_info->getChannel()->setHolder(req_info);
         // loop->queueInLoop(std::bind(&HttpData::newEvent, req_info));

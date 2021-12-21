@@ -3,6 +3,7 @@
 #include "EventLoop.h"
 #include "EventLoopThreadPool.h"
 #include "Channel.h"
+#include "Tcpconn.h"
 #include <memory>
 namespace fuyou
 {

@@ -48,6 +48,7 @@ void EventLoop::wakeup(){
     ssize_t n = writen(_wakeupfd, (char*)one, sizeof(one));
     if(n != sizeof(one)){
         LOG << "EventLoop::wakeup() writes " << n << " bytes instead of 8";
+        abort();
     }
 }
 

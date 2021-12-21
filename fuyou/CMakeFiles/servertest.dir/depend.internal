@@ -20,5 +20,6 @@ CMakeFiles/servertest.dir/Main.cpp.o
  /home/hqin/fuyou/fuyou/net/EventLoopThread.h
  /home/hqin/fuyou/fuyou/net/EventLoopThreadPool.h
  /home/hqin/fuyou/fuyou/net/Server.h
+ /home/hqin/fuyou/fuyou/net/Tcpconn.h
  /home/hqin/fuyou/fuyou/net/Timer.h
  /home/hqin/fuyou/fuyou/net/Util.h

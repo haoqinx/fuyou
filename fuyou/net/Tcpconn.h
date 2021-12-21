@@ -6,6 +6,7 @@
 #include "Epoll.h"
 #include "Timer.h"
 #include "Util.h"
+#include "EventLoop.h"
 #include <memory>
 
 namespace fuyou
@@ -22,7 +23,11 @@ public:
     }
     void handleClose();
     void newEvent();
-
+    
+    void handleRead();
+    void handleWrite();
+    void handleConn();
+    void handleError(int fd, int err_num, std::string msg);
 private:
     EventLoop* _loop;
     int _connfd;
@@ -31,11 +36,9 @@ private:
     std::weak_ptr<TimerNode> _timer;
     std::string _inbuffer;
     std::string _outbuffer;
+    bool _error;
+
     
-    void handleRead();
-    void handleWrite();
-    void handleConn();
-    void handleError(int fd, int err_num, std::string msg);
 
 };
 } // namespace fuyou

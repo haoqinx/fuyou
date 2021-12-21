@@ -67,7 +67,7 @@ CMakeFiles/servertest.dir/all: base/CMakeFiles/fuyou_base.dir/all
 CMakeFiles/servertest.dir/all: net/CMakeFiles/fuyou_net.dir/all
 	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/depend
 	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=19,20 "Built target servertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=20,21 "Built target servertest"
 .PHONY : CMakeFiles/servertest.dir/all
 
 # Include target in all.
@@ -77,7 +77,7 @@ all: CMakeFiles/servertest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/servertest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 19
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/servertest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
 .PHONY : CMakeFiles/servertest.dir/rule
@@ -179,7 +179,7 @@ base/tests/preinstall:
 base/tests/CMakeFiles/loggertest.dir/all: base/CMakeFiles/fuyou_base.dir/all
 	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/depend
 	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=17,18 "Built target loggertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=18,19 "Built target loggertest"
 .PHONY : base/tests/CMakeFiles/loggertest.dir/all
 
 # Include target in all.
@@ -234,7 +234,7 @@ net/preinstall:
 net/CMakeFiles/fuyou_net.dir/all: base/CMakeFiles/fuyou_base.dir/all
 	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/depend
 	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=8,9,10,11,12,13,14,15,16 "Built target fuyou_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=8,9,10,11,12,13,14,15,16,17 "Built target fuyou_net"
 .PHONY : net/CMakeFiles/fuyou_net.dir/all
 
 # Include target in all.
@@ -244,7 +244,7 @@ all: net/CMakeFiles/fuyou_net.dir/all
 
 # Build rule for subdir invocation for target.
 net/CMakeFiles/fuyou_net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 17
 	$(MAKE) -f CMakeFiles/Makefile2 net/CMakeFiles/fuyou_net.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
 .PHONY : net/CMakeFiles/fuyou_net.dir/rule
