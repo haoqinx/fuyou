@@ -45,8 +45,9 @@ EventLoop::~EventLoop(){
 
 void EventLoop::wakeup(){
     uint64_t one = 1;
-    ssize_t n = writen(_wakeupfd, (char*)one, sizeof(one));
+    ssize_t n = writen(_wakeupfd, (char*)&one, sizeof(one));
     if(n != sizeof(one)){
+        LOG << "wakeupfd is " << _wakeupfd;
         LOG << "EventLoop::wakeup() writes " << n << " bytes instead of 8";
         abort();
     }
@@ -54,12 +55,12 @@ void EventLoop::wakeup(){
 
 void EventLoop::handleRead(){
     uint64_t one = 1;
-    ssize_t n = readn(_wakeupfd, &one, sizeof one);
+    ssize_t n = readn(_wakeupfd, &one, sizeof(one));
     if (n != sizeof(one)) {
         LOG << "EventLoop::handleRead() reads " << n << " bytes instead of 8";
     }
     else{
-        LOG << "receive" << n << "bytes data";
+        LOG << "receive " << n << " bytes data";
     }
     _pwakeupChannel -> setEvents(EPOLLIN | EPOLLET);
 }
@@ -89,7 +90,7 @@ void EventLoop::loop(){
     assert(isRunInLoop());
     _looping = true;
     _quit = false;
-
+    LOG << CurrentThread::tid() << " is running";
     std::vector<SP_Channel> ret;
     while(!_quit){
         ret.clear();

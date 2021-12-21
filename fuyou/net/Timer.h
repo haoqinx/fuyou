@@ -5,11 +5,11 @@
 
 namespace fuyou
 {
-class  HttpData; 
+class  Tcpconn; 
 
 class TimerNode{
 public:
-    TimerNode(std::shared_ptr<HttpData>reqdata, int timeout);
+    TimerNode(std::shared_ptr<Tcpconn>reqdata, int timeout);
     ~TimerNode();
 
     TimerNode(TimerNode& tn);
@@ -28,7 +28,7 @@ public:
 private:
     bool _deleted;
     size_t _expiredTime;
-    std::shared_ptr<HttpData> SP_HttpData;
+    std::shared_ptr<Tcpconn> SP_HttpData;
 };
 struct TimerCmp{
     bool operator()(std::shared_ptr<TimerNode>& t1, std::shared_ptr<TimerNode>& t2){
@@ -40,7 +40,7 @@ public:
     TimerManager();
     ~TimerManager();
     void handleExpiredEvent();
-    void addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout);
+    void addTimer(std::shared_ptr<Tcpconn> SPHttpData, int timeout);
 
 private:
     typedef std::shared_ptr<TimerNode> SP_TimeNode;

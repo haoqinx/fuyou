@@ -54,6 +54,7 @@ ssize_t writen(int fd, void* buff, size_t n){
                     return writeSum;
                 }
                 else{
+                    LOG << "haswriten  " << writeSum << " errno is " << errno; 
                     return -1;
                 }
             }
@@ -94,7 +95,8 @@ ssize_t writen(int fd, std::string& buf){
     ssize_t nwritten = 0;
     ssize_t writeSum = 0;
     const char* ptr = buf.c_str();
-    while(nleft < 0){
+    LOG << "data is " << buf.c_str();
+    while(nleft > 0){
         if((nwritten = write(fd, ptr, nleft)) <= 0){
             if(nwritten < 0){
                 if(errno == EINTR){

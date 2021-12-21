@@ -88,7 +88,7 @@ std::vector<SP_Channel> Epoll::getEventRequests(int eventNum){
 }
 
 void Epoll::addTimer(SP_Channel reqdata, int timeout){
-    std::shared_ptr<HttpData> t = reqdata->getHolder();
+    std::shared_ptr<Tcpconn> t = reqdata->getHolder();
     if (t){
         _timerManager.addTimer(t, timeout);
     }

@@ -51,7 +51,7 @@ private:
     mutable MutexLock _mutex;
     std::vector<Functor> _pendingFunctors;
     SP_Channel _pwakeupChannel;
-    std::shared_ptr<Epoll> _poller;
+    std::unique_ptr<Epoll> _poller;
 
     void wakeup();
     void handleRead();

@@ -3,7 +3,7 @@
 
 namespace fuyou
 {
-TimerNode::TimerNode(std::shared_ptr<HttpData> reqdata, int timeout)
+TimerNode::TimerNode(std::shared_ptr<Tcpconn> reqdata, int timeout)
                     :_deleted(false),
                     SP_HttpData(reqdata){
     struct timeval now;
@@ -71,7 +71,7 @@ void TimerManager::handleExpiredEvent(){
     }
 }
 
-void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout){
+void TimerManager::addTimer(std::shared_ptr<Tcpconn> SPHttpData, int timeout){
     SP_TimeNode newNode(new TimerNode(SPHttpData, timeout));
     timeNodeQueue.push(newNode);
     // SPHttpData -> linkTimer(newNode);   

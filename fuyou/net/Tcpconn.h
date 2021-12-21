@@ -11,7 +11,7 @@
 
 namespace fuyou
 {
-class Tcpconn{
+class Tcpconn : public std::enable_shared_from_this<Tcpconn>{
 public:
     Tcpconn(EventLoop* loop, int connfd);
     ~Tcpconn();
@@ -37,8 +37,6 @@ private:
     std::string _inbuffer;
     std::string _outbuffer;
     bool _error;
-
-    
 
 };
 } // namespace fuyou

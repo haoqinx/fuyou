@@ -7,7 +7,7 @@
 namespace fuyou
 {
 class EventLoop;
-class HttpData;
+class Tcpconn;
 class Channel{
 public:
     typedef std::function<void()> CallBack;
@@ -17,16 +17,16 @@ public:
     int getfd();
     void setfd(int fd);
 
-    void setHolder(std::shared_ptr<HttpData> holder){
+    void setHolder(std::shared_ptr<Tcpconn> holder){
         holder_ = holder;
     }
 
-    std::shared_ptr<HttpData> getHolder(){
-        std::shared_ptr<HttpData> ret(holder_.lock());
+    std::shared_ptr<Tcpconn> getHolder(){
+        std::shared_ptr<Tcpconn> ret(holder_.lock());
         return ret;
     }
-
     void setReadHandler(CallBack&& rh){
+
         readHandler = rh;
     }
     
@@ -96,7 +96,7 @@ private:
     __uint32_t revents;
     __uint32_t lastEvents;
 
-    std::weak_ptr<HttpData> holder_;
+    std::weak_ptr<Tcpconn> holder_;
     CallBack readHandler;
     CallBack writeHandler;
     CallBack errorHandler;

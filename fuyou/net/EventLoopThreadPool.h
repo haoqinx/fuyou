@@ -11,7 +11,9 @@ namespace fuyou
 class EventLoopThreadPool : nonecopyable{
 public:
     EventLoopThreadPool(EventLoop* loop, int numThreads);
-    ~EventLoopThreadPool(){};
+    ~EventLoopThreadPool(){
+        LOG << "delete EventLoopThreadPool";
+    };
     void start();
     EventLoop* getNextLoop();
 

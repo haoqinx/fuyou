@@ -162,6 +162,19 @@ fuyou_net/fast:
 	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/build
 .PHONY : fuyou_net/fast
 
+#=============================================================================
+# Target rules for targets named client_01
+
+# Build rule for target.
+client_01: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_01
+.PHONY : client_01
+
+# fast build rule for target.
+client_01/fast:
+	$(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/build
+.PHONY : client_01/fast
+
 Main.o: Main.cpp.o
 
 .PHONY : Main.o
@@ -201,6 +214,7 @@ help:
 	@echo "... fuyou_base"
 	@echo "... loggertest"
 	@echo "... fuyou_net"
+	@echo "... client_01"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

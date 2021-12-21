@@ -7,6 +7,7 @@
 #include <iostream>
 namespace fuyou
 {
+
 class Epoll{
 public:
     Epoll();
@@ -26,7 +27,7 @@ private:
     int _epollfd;
     std::vector<epoll_event> events;
     std::shared_ptr<Channel> fdToChannel[MAXFDS];
-    std::shared_ptr<HttpData> fdToHttp[MAXFDS];
+    std::shared_ptr<Tcpconn> fdToHttp[MAXFDS];
     TimerManager _timerManager;
 };
 } // namespace fuyou
