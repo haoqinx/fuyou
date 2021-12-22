@@ -40,9 +40,6 @@ Logger::~Logger(){
     const Logstream::logbuf& buf(stream().getBuf());
     _output(buf.getData(), buf.getLen());
     //debug used
-    // for(int i = 0; i < buf.getLen(); ++ i){
-    //     std::cout << (char)*(buf.getData() + i);
-    // }
     fwrite(buf.getData(), sizeof(char), buf.getLen(), stdout);
 }
 } // namespace fuyou
