@@ -54,5 +54,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "base/CMakeFiles/fuyou_base.dir/DependInfo.cmake"
   "base/tests/CMakeFiles/loggertest.dir/DependInfo.cmake"
   "net/CMakeFiles/fuyou_net.dir/DependInfo.cmake"
-  "tests/CMakeFiles/client_01.dir/DependInfo.cmake"
+  "tests/CMakeFiles/threadpool.dir/DependInfo.cmake"
   )

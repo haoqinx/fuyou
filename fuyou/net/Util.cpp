@@ -73,6 +73,7 @@ ssize_t readn(int fd, string& buff, bool& zero){
         if((nread = read(fd, tmp, MAX_BUFF)) < 0){
             if(errno == EINTR) continue;
             else if(errno == EAGAIN){
+                LOG << "Read down";
                 return readSum;
             }
             else{
@@ -104,6 +105,7 @@ ssize_t writen(int fd, std::string& buf){
                     continue;
                 }
                 else if(errno == EAGAIN){
+                    LOG << "Write down";
                     break;
                 }
                 else{

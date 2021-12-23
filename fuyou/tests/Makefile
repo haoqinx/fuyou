@@ -111,46 +111,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/client_01.dir/rule:
-	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/client_01.dir/rule
-.PHONY : tests/CMakeFiles/client_01.dir/rule
+tests/CMakeFiles/threadpool.dir/rule:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/threadpool.dir/rule
+.PHONY : tests/CMakeFiles/threadpool.dir/rule
 
 # Convenience name for target.
-client_01: tests/CMakeFiles/client_01.dir/rule
+threadpool: tests/CMakeFiles/threadpool.dir/rule
 
-.PHONY : client_01
+.PHONY : threadpool
 
 # fast build rule for target.
-client_01/fast:
-	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/build
-.PHONY : client_01/fast
+threadpool/fast:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/build
+.PHONY : threadpool/fast
 
-client_01.o: client_01.cpp.o
+threadpool.o: threadpool.cpp.o
 
-.PHONY : client_01.o
+.PHONY : threadpool.o
 
 # target to build an object file
-client_01.cpp.o:
-	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/client_01.cpp.o
-.PHONY : client_01.cpp.o
+threadpool.cpp.o:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/threadpool.cpp.o
+.PHONY : threadpool.cpp.o
 
-client_01.i: client_01.cpp.i
+threadpool.i: threadpool.cpp.i
 
-.PHONY : client_01.i
+.PHONY : threadpool.i
 
 # target to preprocess a source file
-client_01.cpp.i:
-	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/client_01.cpp.i
-.PHONY : client_01.cpp.i
+threadpool.cpp.i:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/threadpool.cpp.i
+.PHONY : threadpool.cpp.i
 
-client_01.s: client_01.cpp.s
+threadpool.s: threadpool.cpp.s
 
-.PHONY : client_01.s
+.PHONY : threadpool.s
 
 # target to generate assembly for a file
-client_01.cpp.s:
-	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/client_01.cpp.s
-.PHONY : client_01.cpp.s
+threadpool.cpp.s:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/threadpool.cpp.s
+.PHONY : threadpool.cpp.s
 
 # Help Target
 help:
@@ -159,11 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... client_01"
+	@echo "... threadpool"
 	@echo "... edit_cache"
-	@echo "... client_01.o"
-	@echo "... client_01.i"
-	@echo "... client_01.s"
+	@echo "... threadpool.o"
+	@echo "... threadpool.i"
+	@echo "... threadpool.s"
 .PHONY : help
 
 
