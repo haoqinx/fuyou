@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 #include <functional>
+#include "../base/Logger.h"
 namespace fuyou
 {
 class EventLoop;

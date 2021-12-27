@@ -75,6 +75,7 @@ void Tcpconn::newEvent(){
 }
 
 void Tcpconn::handleConn(){
+    LOG << "handling connection";
     __uint32_t& _events = _channel -> getEvents();
     if(_events & EPOLLOUT){
         LOG << "Handleconn event detects: EPOLLOUT";

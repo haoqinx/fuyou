@@ -109,6 +109,7 @@ ssize_t writen(int fd, std::string& buf){
                     break;
                 }
                 else{
+                    LOG << fd << " may be closed";
                     return -1;
                 }
             }

@@ -9,7 +9,7 @@ Channel::Channel(EventLoop* lp, int fd):_loop(lp), fd(fd), events(0),lastEvents(
 }
 
 Channel::~Channel(){
-
+    LOG << "Delete Channel";
 }
 
 int Channel::getfd(){

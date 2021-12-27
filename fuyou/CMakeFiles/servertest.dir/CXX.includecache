@@ -159,6 +159,8 @@ string
 -
 functional
 -
+../base/Logger.h
+/home/hqin/fuyou/fuyou/base/Logger.h
 
 /home/hqin/fuyou/fuyou/net/Epoll.h
 Channel.h

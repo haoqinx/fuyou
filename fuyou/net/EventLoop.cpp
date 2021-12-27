@@ -35,10 +35,13 @@ EventLoop::EventLoop():_looping(false),
 }
 
 void EventLoop::handleConn(){
-    updatePoller(_pwakeupChannel);
+    // ET mode
+    // updatePoller(_pwakeupChannel);
+    LOG << "Entering wakeup channel... ";
 }
 
 EventLoop::~EventLoop(){
+    LOG << "Delete EventLoop";
     close(_wakeupfd);
     t_loopInthisThread = nullptr;
 }
@@ -46,6 +49,7 @@ EventLoop::~EventLoop(){
 void EventLoop::wakeup(){
     uint64_t one = 1;
     ssize_t n = writen(_wakeupfd, (char*)&one, sizeof(one));
+    LOG << "Wakeup " << _wakeupfd;
     if(n != sizeof(one)){
         LOG << "wakeupfd is " << _wakeupfd;
         LOG << "EventLoop::wakeup() writes " << n << " bytes instead of 8";
@@ -62,7 +66,8 @@ void EventLoop::handleRead(){
     else{
         LOG << "receive " << n << " bytes data";
     }
-    _pwakeupChannel -> setEvents(EPOLLIN | EPOLLPRI | EPOLLRDHUP);
+    // ET mod
+    // _pwakeupChannel -> setEvents(EPOLLIN | EPOLLPRI | EPOLLRDHUP);
 }
 
 void EventLoop::runInLoop(Functor&& cb){
@@ -81,6 +86,7 @@ void EventLoop::queueInLoop(Functor&& cb){
     }
     
     if(!isRunInLoop() || _callingPendingFunctors){
+        LOG << "Not in right thread:" << "cur:" << CurrentThread::tid() << " vs " << "right: " << _threadId;
         wakeup();
     }
 }
