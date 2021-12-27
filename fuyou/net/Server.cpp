@@ -28,7 +28,7 @@ Server::Server(EventLoop* loop, int numthread, int port)
 
 void Server::start(){
     _eventLoopThreadPool -> start();
-    _acceptChannel -> setEvents(EPOLLIN | EPOLLET);
+    _acceptChannel -> setEvents(EPOLLIN);
     _acceptChannel -> setReadHandler(bind(&Server::handleNewConn, this));
     _acceptChannel -> setConnHandler(bind(&Server::handleCurrentConn, this));
     _loop -> addPoller(_acceptChannel, 0);
@@ -61,6 +61,6 @@ void Server::handleNewConn(){
         loop -> queueInLoop(std::bind(&Tcpconn::newEvent, conn));
     
     }   
-    _acceptChannel -> setEvents(EPOLLIN | EPOLLET);
+    // _acceptChannel -> setEvents(EPOLLIN);
 }
 } // namespace fuyou

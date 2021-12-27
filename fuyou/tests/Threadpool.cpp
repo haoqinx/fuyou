@@ -1,4 +1,3 @@
-
 #include <vector>
 #include <queue>
 #include <atomic>
@@ -8,6 +7,7 @@
 #include <functional>
 #include <stdexcept>
 #include <iostream>
+#include <memory>
 
 namespace fuyou
 {
@@ -50,7 +50,8 @@ public:
 	auto commit(F&& f, Args&&... args) -> std::future<decltype(f(args...))>
 	{
 		if (!_run)    // stoped ??
-			throw runtime_error("commit on ThreadPool is stopped.");
+			// throw runtime_error("commit on ThreadPool is stopped.");
+			abort();
 
 		using RetType = decltype(f(args...)); // typename std::result_of<F(Args...)>::type, 函数 f 的返回值类型
 		auto task = make_shared<packaged_task<RetType()>>(

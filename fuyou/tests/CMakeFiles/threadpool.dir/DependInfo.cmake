@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hqin/fuyou/fuyou/tests/threadpool.cpp" "/home/hqin/fuyou/fuyou/tests/CMakeFiles/threadpool.dir/threadpool.cpp.o"
+  "/home/hqin/fuyou/fuyou/tests/Threadpool.cpp" "/home/hqin/fuyou/fuyou/tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/threadpool.dir/threadpool.cpp.o"
+  "CMakeFiles/threadpool.dir/Threadpool.cpp.o"
   "threadpool.pdb"
   "threadpool"
 )

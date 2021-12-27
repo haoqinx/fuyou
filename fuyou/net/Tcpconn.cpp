@@ -3,7 +3,7 @@
 #include <memory>
 namespace fuyou
 {
-const __uint32_t DEFAULT_EVENT = EPOLLIN | EPOLLET | EPOLLONESHOT;
+const __uint32_t DEFAULT_EVENT = EPOLLIN | EPOLLPRI | EPOLLRDHUP;
 const int DEFAULT_EXPIRED_TIME = 2000;  
 const int KEEP_CONN_TIME = 5 * 60 * 1000;
 Tcpconn::Tcpconn(EventLoop* loop, int connfd):
@@ -29,14 +29,13 @@ void Tcpconn::handleRead(){
         if(readBytes > 0){
             LOG << "New Msg :" << _inbuffer; 
             _outbuffer = _inbuffer;
-            LOG << "!!!!!!!!!!" << _outbuffer << "|length=" << _outbuffer.size();
             if(_outbuffer[0] == 'b'){
                 LOG << "-----------------------------------------";
                 isClose = true;
                 _outbuffer.clear();
             }
             else{
-                LOG << "???????????????????????????????????????????";
+                handleWrite();
             }
             _inbuffer.clear();
         }
@@ -61,11 +60,11 @@ void Tcpconn::handleWrite(){
             _events = 0;
             _error = true;
         }
-        else{
-            LOG << "write " << writeBytes << " data";
-        }
-        if(_outbuffer.size() > 0){
+        else if(_outbuffer.size() > 0){
             _events |= EPOLLOUT;
+            LOG << "write " << writeBytes << " data";
+            _channel -> setEvents(_events);
+            _poller -> epollMod(_channel, 0);
         }
     }
 }
@@ -83,9 +82,9 @@ void Tcpconn::handleConn(){
     else if(_events & EPOLLIN){
         LOG << "Handleconn event detects: EPOLLIN";
     }
-    _events |= (EPOLLIN | EPOLLET);
-    int timeout = KEEP_CONN_TIME;
-    _loop -> updatePoller(_channel, timeout);
+    // _events |= (EPOLLIN | EPOLLET);
+    // int timeout = KEEP_CONN_TIME;
+    // _loop -> updatePoller(_channel, timeout);
 }
 void Tcpconn::handleError(int fd, int err_num, std::string msg){
     LOG << "Doing Handle Error";
@@ -95,5 +94,6 @@ void Tcpconn::handleClose(){
     LOG << "begin to close";
     std::shared_ptr<Tcpconn> guard(shared_from_this());
     _loop -> removeFromPoller(_channel);
+    close(_channel -> getfd());
 }
 } // namespace fuyou

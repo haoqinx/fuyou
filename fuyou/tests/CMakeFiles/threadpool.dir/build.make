@@ -57,38 +57,38 @@ include tests/CMakeFiles/threadpool.dir/progress.make
 # Include the compile flags for this target's objects.
 include tests/CMakeFiles/threadpool.dir/flags.make
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.o: tests/CMakeFiles/threadpool.dir/flags.make
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.o: tests/threadpool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/threadpool.dir/threadpool.cpp.o"
-	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/threadpool.dir/threadpool.cpp.o -c /home/hqin/fuyou/fuyou/tests/threadpool.cpp
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o: tests/CMakeFiles/threadpool.dir/flags.make
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o: tests/Threadpool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o"
+	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/threadpool.dir/Threadpool.cpp.o -c /home/hqin/fuyou/fuyou/tests/Threadpool.cpp
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/threadpool.dir/threadpool.cpp.i"
-	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/tests/threadpool.cpp > CMakeFiles/threadpool.dir/threadpool.cpp.i
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/threadpool.dir/Threadpool.cpp.i"
+	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqin/fuyou/fuyou/tests/Threadpool.cpp > CMakeFiles/threadpool.dir/Threadpool.cpp.i
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/threadpool.dir/threadpool.cpp.s"
-	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/tests/threadpool.cpp -o CMakeFiles/threadpool.dir/threadpool.cpp.s
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/threadpool.dir/Threadpool.cpp.s"
+	cd /home/hqin/fuyou/fuyou/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqin/fuyou/fuyou/tests/Threadpool.cpp -o CMakeFiles/threadpool.dir/Threadpool.cpp.s
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.requires:
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.requires:
 
-.PHONY : tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.requires
+.PHONY : tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.requires
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.provides: tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.requires
-	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.provides.build
-.PHONY : tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.provides
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.provides: tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.requires
+	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.provides.build
+.PHONY : tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.provides
 
-tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.provides.build: tests/CMakeFiles/threadpool.dir/threadpool.cpp.o
+tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.provides.build: tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o
 
 
 # Object files for target threadpool
 threadpool_OBJECTS = \
-"CMakeFiles/threadpool.dir/threadpool.cpp.o"
+"CMakeFiles/threadpool.dir/Threadpool.cpp.o"
 
 # External object files for target threadpool
 threadpool_EXTERNAL_OBJECTS =
 
-tests/threadpool: tests/CMakeFiles/threadpool.dir/threadpool.cpp.o
+tests/threadpool: tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o
 tests/threadpool: tests/CMakeFiles/threadpool.dir/build.make
 tests/threadpool: tests/CMakeFiles/threadpool.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable threadpool"
@@ -99,7 +99,7 @@ tests/CMakeFiles/threadpool.dir/build: tests/threadpool
 
 .PHONY : tests/CMakeFiles/threadpool.dir/build
 
-tests/CMakeFiles/threadpool.dir/requires: tests/CMakeFiles/threadpool.dir/threadpool.cpp.o.requires
+tests/CMakeFiles/threadpool.dir/requires: tests/CMakeFiles/threadpool.dir/Threadpool.cpp.o.requires
 
 .PHONY : tests/CMakeFiles/threadpool.dir/requires
 

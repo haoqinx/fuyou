@@ -67,7 +67,7 @@ CMakeFiles/servertest.dir/all: base/CMakeFiles/fuyou_base.dir/all
 CMakeFiles/servertest.dir/all: net/CMakeFiles/fuyou_net.dir/all
 	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/depend
 	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=20,21 "Built target servertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=22,23 "Built target servertest"
 .PHONY : CMakeFiles/servertest.dir/all
 
 # Include target in all.
@@ -124,7 +124,7 @@ base/preinstall: base/tests/preinstall
 base/CMakeFiles/fuyou_base.dir/all:
 	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/depend
 	$(MAKE) -f base/CMakeFiles/fuyou_base.dir/build.make base/CMakeFiles/fuyou_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target fuyou_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=3,4,5,6,7,8,9 "Built target fuyou_base"
 .PHONY : base/CMakeFiles/fuyou_base.dir/all
 
 # Include target in all.
@@ -179,7 +179,7 @@ base/tests/preinstall:
 base/tests/CMakeFiles/loggertest.dir/all: base/CMakeFiles/fuyou_base.dir/all
 	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/depend
 	$(MAKE) -f base/tests/CMakeFiles/loggertest.dir/build.make base/tests/CMakeFiles/loggertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=18,19 "Built target loggertest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=20,21 "Built target loggertest"
 .PHONY : base/tests/CMakeFiles/loggertest.dir/all
 
 # Include target in all.
@@ -234,7 +234,7 @@ net/preinstall:
 net/CMakeFiles/fuyou_net.dir/all: base/CMakeFiles/fuyou_base.dir/all
 	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/depend
 	$(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=8,9,10,11,12,13,14,15,16,17 "Built target fuyou_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19 "Built target fuyou_net"
 .PHONY : net/CMakeFiles/fuyou_net.dir/all
 
 # Include target in all.
@@ -268,12 +268,12 @@ clean: net/CMakeFiles/fuyou_net.dir/clean
 # Directory level rules for directory tests
 
 # Convenience name for "all" pass in the directory.
-tests/all: tests/CMakeFiles/threadpool.dir/all
+tests/all: tests/CMakeFiles/client_01.dir/all
 
 .PHONY : tests/all
 
 # Convenience name for "clean" pass in the directory.
-tests/clean: tests/CMakeFiles/threadpool.dir/clean
+tests/clean: tests/CMakeFiles/client_01.dir/clean
 
 .PHONY : tests/clean
 
@@ -283,39 +283,39 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/threadpool.dir
+# Target rules for target tests/CMakeFiles/client_01.dir
 
 # All Build rule for target.
-tests/CMakeFiles/threadpool.dir/all:
-	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/depend
-	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=22,23 "Built target threadpool"
-.PHONY : tests/CMakeFiles/threadpool.dir/all
+tests/CMakeFiles/client_01.dir/all:
+	$(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/depend
+	$(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=1,2 "Built target client_01"
+.PHONY : tests/CMakeFiles/client_01.dir/all
 
 # Include target in all.
-all: tests/CMakeFiles/threadpool.dir/all
+all: tests/CMakeFiles/client_01.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/threadpool.dir/rule: cmake_check_build_system
+tests/CMakeFiles/client_01.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/threadpool.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/client_01.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
-.PHONY : tests/CMakeFiles/threadpool.dir/rule
+.PHONY : tests/CMakeFiles/client_01.dir/rule
 
 # Convenience name for target.
-threadpool: tests/CMakeFiles/threadpool.dir/rule
+client_01: tests/CMakeFiles/client_01.dir/rule
 
-.PHONY : threadpool
-
-# clean rule for target.
-tests/CMakeFiles/threadpool.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/clean
-.PHONY : tests/CMakeFiles/threadpool.dir/clean
+.PHONY : client_01
 
 # clean rule for target.
-clean: tests/CMakeFiles/threadpool.dir/clean
+tests/CMakeFiles/client_01.dir/clean:
+	$(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/clean
+.PHONY : tests/CMakeFiles/client_01.dir/clean
+
+# clean rule for target.
+clean: tests/CMakeFiles/client_01.dir/clean
 
 .PHONY : clean
 

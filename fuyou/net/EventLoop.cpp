@@ -28,14 +28,14 @@ EventLoop::EventLoop():_looping(false),
         t_loopInthisThread = this;
     }
 
-    _pwakeupChannel -> setEvents(EPOLLIN | EPOLLET);
+    _pwakeupChannel -> setEvents(EPOLLIN | EPOLLPRI | EPOLLRDHUP);
     _pwakeupChannel -> setReadHandler(bind(&EventLoop::handleRead, this));
     _pwakeupChannel -> setConnHandler(bind(&EventLoop::handleConn, this));
     _poller -> epollAdd(_pwakeupChannel, 0);
 }
 
 void EventLoop::handleConn(){
-    updatePoller(_pwakeupChannel, 0);
+    updatePoller(_pwakeupChannel);
 }
 
 EventLoop::~EventLoop(){
@@ -62,7 +62,7 @@ void EventLoop::handleRead(){
     else{
         LOG << "receive " << n << " bytes data";
     }
-    _pwakeupChannel -> setEvents(EPOLLIN | EPOLLET);
+    _pwakeupChannel -> setEvents(EPOLLIN | EPOLLPRI | EPOLLRDHUP);
 }
 
 void EventLoop::runInLoop(Functor&& cb){
@@ -90,9 +90,9 @@ void EventLoop::loop(){
     assert(isRunInLoop());
     _looping = true;
     _quit = false;
-    LOG << CurrentThread::tid() << " is running";
     std::vector<SP_Channel> ret;
     while(!_quit){
+        LOG << CurrentThread::tid() << " is running";
         ret.clear();
         ret = _poller -> poll();
         _eventHandling = true;

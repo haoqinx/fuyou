@@ -11,5 +11,5 @@
 /home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir
 /home/hqin/fuyou/fuyou/net/CMakeFiles/edit_cache.dir
 /home/hqin/fuyou/fuyou/tests/CMakeFiles/rebuild_cache.dir
-/home/hqin/fuyou/fuyou/tests/CMakeFiles/threadpool.dir
+/home/hqin/fuyou/fuyou/tests/CMakeFiles/client_01.dir
 /home/hqin/fuyou/fuyou/tests/CMakeFiles/edit_cache.dir

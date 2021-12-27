@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hqin/fuyou/fuyou/tests/threadpool.cpp
+/home/hqin/fuyou/fuyou/tests/Threadpool.cpp
 vector
 -
 queue
@@ -24,5 +24,7 @@ functional
 stdexcept
 -
 iostream
+-
+memory
 -
 

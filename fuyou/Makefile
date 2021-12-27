@@ -163,17 +163,17 @@ fuyou_net/fast:
 .PHONY : fuyou_net/fast
 
 #=============================================================================
-# Target rules for targets named threadpool
+# Target rules for targets named client_01
 
 # Build rule for target.
-threadpool: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 threadpool
-.PHONY : threadpool
+client_01: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_01
+.PHONY : client_01
 
 # fast build rule for target.
-threadpool/fast:
-	$(MAKE) -f tests/CMakeFiles/threadpool.dir/build.make tests/CMakeFiles/threadpool.dir/build
-.PHONY : threadpool/fast
+client_01/fast:
+	$(MAKE) -f tests/CMakeFiles/client_01.dir/build.make tests/CMakeFiles/client_01.dir/build
+.PHONY : client_01/fast
 
 Main.o: Main.cpp.o
 
@@ -214,7 +214,7 @@ help:
 	@echo "... fuyou_base"
 	@echo "... loggertest"
 	@echo "... fuyou_net"
-	@echo "... threadpool"
+	@echo "... client_01"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

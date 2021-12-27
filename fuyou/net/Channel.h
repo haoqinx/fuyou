@@ -43,6 +43,7 @@ public:
     }
     void handleEvents (){
         events = 0;
+        handleConn();
         if((revents & EPOLLHUP) && !(revents & EPOLLIN)){
             events = 0;
             return;
@@ -61,7 +62,7 @@ public:
             handleWrite();
         }
 
-        handleConn();
+        
     }
     void handleRead();
     void handleWrite();
