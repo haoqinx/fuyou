@@ -105,6 +105,7 @@ net/CMakeFiles/fuyou_net.dir/Server.cpp.o
  /home/hqin/fuyou/fuyou/net/EventLoop.h
  /home/hqin/fuyou/fuyou/net/EventLoopThread.h
  /home/hqin/fuyou/fuyou/net/EventLoopThreadPool.h
+ /home/hqin/fuyou/fuyou/net/Httpdata.h
  /home/hqin/fuyou/fuyou/net/Server.cpp
  /home/hqin/fuyou/fuyou/net/Server.h
  /home/hqin/fuyou/fuyou/net/Tcpconn.h
@@ -125,6 +126,7 @@ net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o
  /home/hqin/fuyou/fuyou/net/Channel.h
  /home/hqin/fuyou/fuyou/net/Epoll.h
  /home/hqin/fuyou/fuyou/net/EventLoop.h
+ /home/hqin/fuyou/fuyou/net/Httpdata.h
  /home/hqin/fuyou/fuyou/net/Tcpconn.cpp
  /home/hqin/fuyou/fuyou/net/Tcpconn.h
  /home/hqin/fuyou/fuyou/net/Timer.h

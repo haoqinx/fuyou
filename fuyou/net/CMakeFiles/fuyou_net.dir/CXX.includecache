@@ -234,6 +234,18 @@ vector
 memory
 -
 
+/home/hqin/fuyou/fuyou/net/Httpdata.h
+unordered_map
+-
+string
+-
+pthread.h
+-
+atomic
+-
+../base/Logger.h
+/home/hqin/fuyou/fuyou/base/Logger.h
+
 /home/hqin/fuyou/fuyou/net/Server.cpp
 Server.h
 /home/hqin/fuyou/fuyou/net/Server.h
@@ -283,7 +295,11 @@ Util.h
 /home/hqin/fuyou/fuyou/net/Util.h
 EventLoop.h
 /home/hqin/fuyou/fuyou/net/EventLoop.h
+Httpdata.h
+/home/hqin/fuyou/fuyou/net/Httpdata.h
 memory
+-
+atomic
 -
 
 /home/hqin/fuyou/fuyou/net/Timer.cpp

@@ -22,22 +22,15 @@ Tcpconn::~Tcpconn(){
 void Tcpconn::handleRead(){
     __uint32_t &events = _channel -> getEvents();
     bool isClose = false;
+    bool isEnd = false;
     do{
         bool zero = false;
         int readBytes = readn(_connfd, _inbuffer, zero);
        
         if(readBytes > 0){
             LOG << "New Msg :" << _inbuffer; 
-            _outbuffer = _inbuffer;
-            if(_outbuffer[0] == 'b'){
-                LOG << "-----------------------------------------";
-                isClose = true;
-                _outbuffer.clear();
-            }
-            else{
-                handleWrite();
-            }
-            _inbuffer.clear();
+
+            handleWrite();
         }
         else if(readBytes < 0){
             perror("read error");
@@ -96,5 +89,15 @@ void Tcpconn::handleClose(){
     std::shared_ptr<Tcpconn> guard(shared_from_this());
     _loop -> removeFromPoller(_channel);
     close(_channel -> getfd());
+}
+
+AnalysisState Tcpconn::parseHeader(){
+    string &str = _inbuffer;
+    atomic<bool> isEnd(false);
+    size_t i = 0;
+    for( ; i < str.size(); ++ i){
+        
+    }
+
 }
 } // namespace fuyou
