@@ -11,7 +11,6 @@ void* func(void*args){
     return nullptr;
 }
 int main(){
-
     pthread_t p1;
     cout << "current process:" << ::syscall(SYS_gettid) << endl;
     pthread_create(&p1, nullptr, func, nullptr );
