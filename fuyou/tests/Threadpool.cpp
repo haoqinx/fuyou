@@ -49,7 +49,7 @@ public:
 	template<class F, class... Args>
 	auto commit(F&& f, Args&&... args) -> std::future<decltype(f(args...))>
 	{
-		if (!_run)    // stoped ??
+		if (!_run)   
 			// throw runtime_error("commit on ThreadPool is stopped.");
 			abort();
 
@@ -64,15 +64,12 @@ public:
 				(*task)();
 			});
 		}
-#ifdef THREADPOOL_AUTO_GROW
 		if (_idlThrNum < 1 && _pool.size() < THREADPOOL_MAX_NUM)
 			addThread(1);
-#endif // !THREADPOOL_AUTO_GROW
 		_task_cv.notify_one(); // 唤醒一个线程执行
 
 		return future;
 	}
-
 	//空闲线程数量
 	int idlCount() { return _idlThrNum; }
 	//线程数量
@@ -111,8 +108,6 @@ private:
 };
 
 }
-
-
 
 int main()
 {
