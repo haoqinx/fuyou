@@ -82,6 +82,12 @@ void Tcpconn::handleConn(){
 }
 void Tcpconn::handleError(int fd, int err_num, std::string msg){
     LOG << "Doing Handle Error";
+    msg = " " + msg;
+    char send_buf[4096];
+    string body_buff, header_buff;
+    body_buff += "<html><title>出现了一些意想不到的事...</title>";
+    body_buff += "<body bgcolor = \"\"
+    >"
 }
 
 void Tcpconn::handleClose(){
