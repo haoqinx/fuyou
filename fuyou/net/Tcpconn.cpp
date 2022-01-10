@@ -184,6 +184,49 @@ AnalysisState Tcpconn::parseRequsets(){
 URIState Tcpconn::parseURI(){
     string& str = _inbuffer;
     string cop = str;
-    size_t pos = str.find('\r', )
+    size_t pos = str.find('\r', _nowReadPos);
+    if(pos < 0){
+        return PARSE_URI_AGAIN;
+    }
+    string req_line = str.substr(0, pos);
+    if(str.size() > pos + 1){
+        str = str.substr(pos + 1);
+    }
+    else{
+        str.clear();
+    }
+    int posGet = req_line.find("GET");
+    int posPost = req_line.find("POST");
+    int posHead = req_line.find("HEAD");
+
+    if(isGet >= 0){
+        pos = posGet;
+        _opt = GET;
+    }
+    else if(posPost >= 0){
+        pos = posPost;
+        _opt = POST;
+    }
+    else if(posHead >= 0){
+        pos = posHead;
+        _opt = HEAD;
+    }
+    else {
+        return PARSE_URI_ERROR;
+    }
+    pos = req_line.find("/", pos);
+    if(pos < 0){
+        _filename = "index.html";
+        HTTPverion = HTTP11;
+        return PARSE_URI_SUCCESS;
+    }
+    else{
+        size_t 
+        if(_pos - pos > 1){
+            _filename = req_line.substr(pos + 1, _pos)
+        }
+    }
+    
+
 }
 } // namespace fuyou

@@ -62,7 +62,8 @@ private:
     ParseState _headerState;
     std::map<std::string, std::string> _headers;
     std::weak_ptr<TimerNode> _timer;
-    
+    // read size
+    int _nowReadPos;
 
 };
 } // namespace fuyou
