@@ -60,8 +60,8 @@ private:
     //status
     ProcessState _pstate;
     ParseState _headerState;
+    ConnectionState _connectionState;
     std::map<std::string, std::string> _headers;
-    std::weak_ptr<TimerNode> _timer;
     // read size
     int _nowReadPos;
 

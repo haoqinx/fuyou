@@ -1,6 +1,8 @@
 #include  "Httpdata.h"
 namespace fuyou
 {
+pthread_once_t FileType::once_control = PTHREAD_ONCE_INIT;
+std::unordered_map<std::string, std::string> FileType::_typeMap;
 FileType::FileType(){
 
 }
@@ -8,31 +10,31 @@ FileType::~FileType(){
     LOG << "delete filetype";
 }
 
-FileType::init(){
-    mime[".html"] = "text/html";
-    mime[".avi"] = "video/x-msvideo";
-    mime[".bmp"] = "image/bmp";
-    mime[".c"] = "text/plain";
-    mime[".doc"] = "application/msword";
-    mime[".gif"] = "image/gif";
-    mime[".gz"] = "application/x-gzip";
-    mime[".htm"] = "text/html";
-    mime[".ico"] = "image/x-icon";
-    mime[".jpg"] = "image/jpeg";
-    mime[".png"] = "image/png";
-    mime[".txt"] = "text/plain";
-    mime[".mp3"] = "audio/mp3";
-    mime["default"] = "text/html";
+void FileType::init(){
+    _typeMap[".html"] = "text/html";
+    _typeMap[".avi"] = "video/x-msvideo";
+    _typeMap[".bmp"] = "image/bmp";
+    _typeMap[".c"] = "text/plain";
+    _typeMap[".doc"] = "application/msword";
+    _typeMap[".gif"] = "image/gif";
+    _typeMap[".gz"] = "application/x-gzip";
+    _typeMap[".htm"] = "text/html";
+    _typeMap[".ico"] = "image/x-icon";
+    _typeMap[".jpg"] = "image/jpeg";
+    _typeMap[".png"] = "image/png";
+    _typeMap[".txt"] = "text/plain";
+    _typeMap[".mp3"] = "audio/mp3";
+    _typeMap["default"] = "text/html";
 }
 
-std::string FileType::getType(const std::string& f){
-    pthread_once(&once_control, MimeType::init);
-    if (mime.find(suffix) == mime.end()){
-        LOG << "Not found" << f << " , get " << mime["default"] << " instead."；
-        return mime["default"];
+std::string FileType::getType(const std::string& suffix){
+    pthread_once(&once_control, FileType::init);
+    if (_typeMap.find(suffix) == _typeMap.end()){
+        LOG << "Not found" << suffix << " , get " << _typeMap["default"] << " instead.";
+        return _typeMap["default"];
     }
     else{
-        return mime[suffix];
+        return _typeMap[suffix];
     }
 }
 

@@ -4,17 +4,25 @@
 #include <memory>
 #include <unistd.h>
 #include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 namespace fuyou
 {
-const __uint32_t DEFAULT_EVENT = EPOLLIN | EPOLLPRI | EPOLLRDHUP;
+const __uint32_t DEFAULT_EVENT = EPOLLIN |  EPOLLPRI | EPOLLRDHUP;
 const int DEFAULT_EXPIRED_TIME = 2000;  
 const int KEEP_CONN_TIME = 5 * 60 * 1000;
 
 Tcpconn::Tcpconn(EventLoop* loop, int connfd):
                 _loop(loop),
                 _connfd(connfd),
-                _channel(new Channel(loop, connfd)){
+                _channel(new Channel(loop, connfd)),
+                _version(HTTP11),
+                _nowReadPos(0),
+                _headerState(H_START),
+                _opt(GET),
+                _connectionState(STATE_CONNECTED),
+                _pstate(PRO_PARSE_URI){
     _channel -> setReadHandler(bind(&Tcpconn::handleRead, this));
     _channel -> setWriteHandler(bind(&Tcpconn::handleWrite, this));
     _channel -> setConnHandler(bind(&Tcpconn::handleConn, this));
@@ -35,7 +43,8 @@ void Tcpconn::handleRead(){
        
         if(readBytes > 0){
             LOG << "New Msg :" << _inbuffer; 
-
+            _outbuffer = _inbuffer;
+            _inbuffer.clear();
             handleWrite();
         }
         else if(readBytes < 0){
@@ -125,7 +134,7 @@ AnalysisState Tcpconn::parseRequsets(){
         string header;
         header += "HTTP/1.1 200 OK\r\n";
         if(_headers.find("Connection") != _headers.end() && 
-            (_headers["Connection"] == "Keep-Alive" ) || _headers["Connection"] == "keep-alive")){
+            (_headers["Connection"] == "Keep-Alive"  || _headers["Connection"] == "keep-alive")){
             _isKeepAlive = true;
             header += std::string("Connection: Keep-Alive\r\n") + "Keep-Alive: timeout=" + 
                         to_string(KEEP_CONN_TIME) + "\r\n";
@@ -145,7 +154,7 @@ AnalysisState Tcpconn::parseRequsets(){
         }
         //文件是否存在
         struct stat sbuf;
-        if(stat(name.c_str(), &sbuf) < 0){
+        if(stat(_filename.c_str(), &sbuf) < 0){
             header.clear();
             handleError(_connfd, 404, "Not found");
             return ANALYSIS_ERROR;
@@ -185,7 +194,7 @@ URIState Tcpconn::parseURI(){
     string& str = _inbuffer;
     string cop = str;
     size_t pos = str.find('\r', _nowReadPos);
-    if(pos < 0){
+    if(pos < 0 || pos >= str.size()){
         return PARSE_URI_AGAIN;
     }
     string req_line = str.substr(0, pos);
@@ -199,7 +208,7 @@ URIState Tcpconn::parseURI(){
     int posPost = req_line.find("POST");
     int posHead = req_line.find("HEAD");
 
-    if(isGet >= 0){
+    if(posGet >= 0){
         pos = posGet;
         _opt = GET;
     }
@@ -214,19 +223,147 @@ URIState Tcpconn::parseURI(){
     else {
         return PARSE_URI_ERROR;
     }
+    // filename
     pos = req_line.find("/", pos);
     if(pos < 0){
         _filename = "index.html";
-        HTTPverion = HTTP11;
+        _version = HTTP11;
         return PARSE_URI_SUCCESS;
     }
     else{
-        size_t 
+        size_t _pos = req_line.find(' ', pos);
         if(_pos - pos > 1){
-            _filename = req_line.substr(pos + 1, _pos)
+            _filename = req_line.substr(pos + 1, _pos);
+            size_t __pos = _filename.find('?');
+            if(__pos >= 0){
+                _filename = _filename.substr(0, __pos);
+            }
+        }
+        else{
+            _filename = "index.html";
+        }
+        pos = _pos;
+    }
+    //version
+    pos = req_line.find("/", pos);
+    if(pos < 0 || req_line.size() - pos <= 3){
+        return PARSE_URI_ERROR;
+    }
+    else{
+        string version = req_line.substr(pos + 1, 3);
+        if(version == "1.0"){
+            _version = HTTP10;
+        }
+        else if(version == "1.1"){
+            _version = HTTP11;
+        }
+        else{
+            return PARSE_URI_ERROR;
         }
     }
-    
+    return PARSE_URI_SUCCESS;
+}
 
+HeaderState Tcpconn::parseHeaders(){
+    string& str = _inbuffer;
+    int key_start = -1, key_end = -1, value_start = -1, value_end = -1;
+    int cur_line_pos = 0;
+    bool finished = false;
+    size_t index = 0;
+    for(; index < str.size(); ++ index){
+        switch (_headerState){
+            case H_START:{
+                if(str[index] == '\n' || str[index] == '\r') break;
+                _headerState = H_KEY;
+                key_start = index;
+                cur_line_pos = index;
+                break;
+            }
+            case H_KEY:{
+                if(str[index] == ':'){
+                    key_end = index;
+                    if(key_end - key_start <= 0){
+                        return PARSE_HEADER_ERROR;
+                    }
+                    _headerState = H_COLON;
+                }
+                else if(str[index] == '\n' || str[index] == '\r'){
+                    return PARSE_HEADER_ERROR;
+                }
+                break;
+            }
+            case H_COLON:{
+                if(str[index] == ' '){
+                    _headerState = H_SPACES_AFTER_COLON;
+                }
+                else{
+                    return PARSE_HEADER_ERROR;
+                }
+                break;
+            }
+            case H_SPACES_AFTER_COLON:{
+                _headerState = H_VALUE;
+                value_start = index;
+                break;
+            }
+            case H_VALUE:{
+                if(str[index] == '\r'){
+                    _headerState = H_CR;
+                    value_end = index;
+                    if(value_end - value_start <= 0) {
+                        return PARSE_HEADER_ERROR;
+                    }
+                }
+                else if(index - value_start > 255){
+                    return PARSE_HEADER_ERROR;
+                }
+                break;
+            }
+            case H_CR:{
+                if(str[index] == '\n'){
+                    _headerState = H_LF;
+                    std::string key(str.begin() + key_start, str.begin() + key_end);
+                    std::string value(str.begin() + value_start, str.begin() + value_end);
+                    _headers[key] = value;
+                    cur_line_pos = index;
+                }
+                else{
+                    return PARSE_HEADER_ERROR;
+                }
+                break;
+            }
+            case H_LF:{
+                if(str[index] == '\r'){
+                    _headerState = H_END_CR;
+                }
+                else{
+                    key_start = index;
+                    _headerState = H_KEY;
+                }
+                break;
+            }
+            case H_END_CR:{
+                if(str[index] == '\n'){
+                    _headerState = H_END_LF;
+                }
+                else{
+                    return PARSE_HEADER_ERROR;
+                }
+                break;
+            }
+            case H_END_LF:{
+                finished = true;
+                key_start = index;
+                cur_line_pos = index;
+                break;
+            }
+        }
+    }
+    if(_headerState == H_END_LF){
+        str = str.substr(index);
+        return PARSE_HEADER_SUCCESS;
+    }
+    str = str.substr(cur_line_pos);
+    return PARSE_HEADER_AGAIN;
 }
 } // namespace fuyou

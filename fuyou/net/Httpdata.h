@@ -75,7 +75,7 @@ public:
     static std::string getType(const std::string& f);
     static void init();
 private:
-    std::unordered_map<std::string, std::string> _typeMap;
+    static std::unordered_map<std::string, std::string> _typeMap;
     static pthread_once_t once_control;
 };
 

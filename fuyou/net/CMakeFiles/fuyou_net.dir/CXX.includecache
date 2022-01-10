@@ -287,6 +287,14 @@ Httpdata.h
 /home/hqin/fuyou/fuyou/net/Httpdata.h
 memory
 -
+unistd.h
+-
+sys/mman.h
+-
+sys/stat.h
+-
+fcntl.h
+-
 
 /home/hqin/fuyou/fuyou/net/Tcpconn.h
 ../base/Logger.h
@@ -306,6 +314,8 @@ Httpdata.h
 memory
 -
 atomic
+-
+map
 -
 
 /home/hqin/fuyou/fuyou/net/Timer.cpp
