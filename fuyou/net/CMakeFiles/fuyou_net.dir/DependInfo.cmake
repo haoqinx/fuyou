@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hqin/fuyou/fuyou/net/EventLoop.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/EventLoop.cpp.o"
   "/home/hqin/fuyou/fuyou/net/EventLoopThread.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/EventLoopThread.cpp.o"
   "/home/hqin/fuyou/fuyou/net/EventLoopThreadPool.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.o"
+  "/home/hqin/fuyou/fuyou/net/Httpdata.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o"
   "/home/hqin/fuyou/fuyou/net/Server.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/Server.cpp.o"
   "/home/hqin/fuyou/fuyou/net/Tcpconn.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o"
   "/home/hqin/fuyou/fuyou/net/Timer.cpp" "/home/hqin/fuyou/fuyou/net/CMakeFiles/fuyou_net.dir/Timer.cpp.o"

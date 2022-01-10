@@ -88,6 +88,20 @@ net/CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.o: net/EventLoopThreadPool.
 net/CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.o: net/Timer.h
 net/CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.o: net/Util.h
 
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/AsynLogging.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/Condition.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/CountDownLatch.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/CurrentThread.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/FileUtil.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/Filelog.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/Logger.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/Logstream.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/MutexLock.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/Thread.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: base/nonecopyable.h
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: net/Httpdata.cpp
+net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o: net/Httpdata.h
+
 net/CMakeFiles/fuyou_net.dir/Server.cpp.o: base/AsynLogging.h
 net/CMakeFiles/fuyou_net.dir/Server.cpp.o: base/Condition.h
 net/CMakeFiles/fuyou_net.dir/Server.cpp.o: base/CountDownLatch.h

@@ -10,6 +10,7 @@
 #include "Httpdata.h"
 #include <memory>
 #include <atomic>
+#include <map>
 
 namespace fuyou
 {
@@ -32,8 +33,9 @@ public:
     void handleConn();
     void handleError(int fd, int err_num, std::string msg);
 
-    AnalysisState parseHeader();
-    void setHeader();
+    AnalysisState parseRequsets();
+    URIState parseURI();
+    HeaderState parseHeaders();
 private:
     EventLoop* _loop;
     int _connfd;
@@ -44,9 +46,23 @@ private:
     std::string _outbuffer;
     atomic<bool> _error;
     
-    std::shared_ptr<Httpdata> _httpdata;
-    atomic<bool> _isparsingHeader;
-     
+    // HTTP part
+    //header
+    HTTPopt _opt;
+    std::string _filename;
+    HTTPverion _version;
+    //
+    std::string _userAgent;
+    FileType _filetype;
+    atomic<bool> _isKeepAlive;
+    HTTPcharset _charset;
+    HTTPencoding _encoding;
+    //status
+    ProcessState _pstate;
+    ParseState _headerState;
+    std::map<std::string, std::string> _headers;
+    std::weak_ptr<TimerNode> _timer;
+    
 
 };
 } // namespace fuyou

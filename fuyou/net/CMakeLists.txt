@@ -10,6 +10,7 @@ set(
     Timer.cpp
     EventLoopThreadPool.cpp
     Server.cpp
+    Httpdata.cpp
     Tcpconn.cpp
 )
 

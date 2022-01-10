@@ -260,6 +260,33 @@ EventLoopThreadPool.cpp.s:
 	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.s
 .PHONY : EventLoopThreadPool.cpp.s
 
+Httpdata.o: Httpdata.cpp.o
+
+.PHONY : Httpdata.o
+
+# target to build an object file
+Httpdata.cpp.o:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.o
+.PHONY : Httpdata.cpp.o
+
+Httpdata.i: Httpdata.cpp.i
+
+.PHONY : Httpdata.i
+
+# target to preprocess a source file
+Httpdata.cpp.i:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.i
+.PHONY : Httpdata.cpp.i
+
+Httpdata.s: Httpdata.cpp.s
+
+.PHONY : Httpdata.s
+
+# target to generate assembly for a file
+Httpdata.cpp.s:
+	cd /home/hqin/fuyou/fuyou && $(MAKE) -f net/CMakeFiles/fuyou_net.dir/build.make net/CMakeFiles/fuyou_net.dir/Httpdata.cpp.s
+.PHONY : Httpdata.cpp.s
+
 Server.o: Server.cpp.o
 
 .PHONY : Server.o
@@ -392,6 +419,9 @@ help:
 	@echo "... EventLoopThreadPool.o"
 	@echo "... EventLoopThreadPool.i"
 	@echo "... EventLoopThreadPool.s"
+	@echo "... Httpdata.o"
+	@echo "... Httpdata.i"
+	@echo "... Httpdata.s"
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"
