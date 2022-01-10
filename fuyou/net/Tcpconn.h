@@ -11,6 +11,7 @@
 #include <memory>
 #include <atomic>
 #include <map>
+#include "Timer.h"
 
 namespace fuyou
 {
@@ -36,6 +37,7 @@ public:
     AnalysisState parseRequsets();
     URIState parseURI();
     HeaderState parseHeaders();
+    void reset();
 private:
     EventLoop* _loop;
     int _connfd;
@@ -51,7 +53,7 @@ private:
     HTTPopt _opt;
     std::string _filename;
     HTTPverion _version;
-    //
+    //info
     std::string _userAgent;
     FileType _filetype;
     atomic<bool> _isKeepAlive;
@@ -64,6 +66,7 @@ private:
     std::map<std::string, std::string> _headers;
     // read size
     int _nowReadPos;
+    std::string _filepath;
 
 };
 } // namespace fuyou

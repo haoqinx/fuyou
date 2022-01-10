@@ -40,20 +40,101 @@ void Tcpconn::handleRead(){
     do{
         bool zero = false;
         int readBytes = readn(_connfd, _inbuffer, zero);
-       
-        if(readBytes > 0){
-            LOG << "New Msg :" << _inbuffer; 
-            _outbuffer = _inbuffer;
+
+        LOG << "New Msg :" << _inbuffer; 
+
+        if( STATE_DISCONNECTING == _connectionState){
             _inbuffer.clear();
-            handleWrite();
+            break;
         }
-        else if(readBytes < 0){
+        if(readBytes < 0){
             perror("read error");
             handleError(_connfd, 400, "Bad req");
         }
         else if(zero){
+            _connectionState = STATE_DISCONNECTING;
             handleClose();
         }   
+        switch (_pstate){
+        
+        case PRO_PARSE_URI:{
+            URIState ustate = this -> parseURI();
+            if(ustate == PARSE_URI_AGAIN){
+                break;
+            }
+            else if(ustate == PARSE_URI_ERROR){
+                perror("URI parse error");
+                LOG << _connfd << " URI parse error";
+                _inbuffer.clear();
+                _error = true;
+                this -> handleError(_connfd, 400, "Bad Request");
+                break;
+            }
+            else{
+                _pstate = PRO_PARSE_HEADERS;
+            }
+            break;
+        }
+        case PRO_PARSE_HEADERS:{
+            HeaderState hstate = this -> parseHeaders();
+            if(PARSE_HEADER_AGAIN == hstate){
+                //do nothing
+            }
+            else if(PARSE_URI_ERROR == hstate){
+                perror("parse header error");
+                LOG << _connfd << " parse header error";
+                handleError(_connfd, 400, "Bad Request");
+                break;
+            }
+            if(_opt == POST){
+                _pstate = PRO_RECV_BODY;
+            }
+            else{
+                _pstate = PRO_ANALYSIS;
+            }
+            break;
+        }
+        case PRO_RECV_BODY:{
+            int content_len = -1;
+            if(_headers.find("Content-length") != _headers.end()){
+                content_len = stoi(_headers["Content-length"]);
+            }
+            else{
+                _error = true;
+                handleError(_connfd, 400, "Bad Request, lack of options Content-length");
+                break;
+            }
+            if(static_cast<int>(_inbuffer.size()) < content_len){
+                break;
+            }
+            _pstate = PRO_ANALYSIS;
+            break;
+        }
+        case PRO_ANALYSIS:{
+            AnalysisState astate = this -> parseRequsets();
+            if(ANALYSIS_SUCCESS == astate){
+                _pstate = PRO_FINISH;
+            }
+            else{
+                _error = true;
+            }
+            break;
+        }
+        
+        default:
+            break;
+        }
+        if(! _error){
+            LOG << "Parse success ";
+            if(_outbuffer.size() > 0){
+                LOG << "outbuffer: " << _outbuffer << '\n';
+                handleWrite();
+            }
+            if(! _error && _pstate == PRO_FINISH){
+                this -> reset();
+            }
+        }
+        
 
     }while(false);
 }
@@ -365,5 +446,19 @@ HeaderState Tcpconn::parseHeaders(){
     }
     str = str.substr(cur_line_pos);
     return PARSE_HEADER_AGAIN;
+}
+
+void Tcpconn::reset(){
+    _filename.clear();
+    _filepath.clear();
+    _nowReadPos = 0;
+    _pstate = PRO_PARSE_URI;
+    _headerState = H_START;
+    _headers.clear();
+    if(_timer.lock()){
+        std::shared_ptr<TimerNode> my_timer(_timer.lock());
+        my_timer -> clearReq();
+        _timer.reset();
+    }
 }
 } // namespace fuyou
