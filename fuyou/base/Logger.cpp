@@ -40,6 +40,6 @@ Logger::~Logger(){
     const Logstream::logbuf& buf(stream().getBuf());
     _output(buf.getData(), buf.getLen());
     //debug used
-    fwrite(buf.getData(), sizeof(char), buf.getLen(), stdout);
+    //fwrite(buf.getData(), sizeof(char), buf.getLen(), stdout);
 }
 } // namespace fuyou

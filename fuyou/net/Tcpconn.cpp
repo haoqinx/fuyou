@@ -12,6 +12,7 @@ namespace fuyou
 const __uint32_t DEFAULT_EVENT = EPOLLIN |  EPOLLPRI | EPOLLRDHUP;
 const int DEFAULT_EXPIRED_TIME = 2000;  
 const int KEEP_CONN_TIME = 5 * 60 * 1000;
+const std::string BASE_DIR = "/home/hqin/fuyou/static/";
 
 Tcpconn::Tcpconn(EventLoop* loop, int connfd):
                 _loop(loop),
@@ -40,9 +41,8 @@ void Tcpconn::handleRead(){
     do{
         bool zero = false;
         int readBytes = readn(_connfd, _inbuffer, zero);
-
-        LOG << "New Msg :" << _inbuffer; 
-
+        // test info
+        // LOG << "New Msg :" << _inbuffer; 
         if( STATE_DISCONNECTING == _connectionState){
             _inbuffer.clear();
             break;
@@ -55,16 +55,16 @@ void Tcpconn::handleRead(){
             _connectionState = STATE_DISCONNECTING;
             handleClose();
         }   
-        switch (_pstate){
         
-        case PRO_PARSE_URI:{
+        
+        if( _pstate == PRO_PARSE_URI){
             URIState ustate = this -> parseURI();
             if(ustate == PARSE_URI_AGAIN){
                 break;
             }
             else if(ustate == PARSE_URI_ERROR){
                 perror("URI parse error");
-                LOG << _connfd << " URI parse error";
+                //LOG << _connfd << " URI parse error";
                 _inbuffer.clear();
                 _error = true;
                 this -> handleError(_connfd, 400, "Bad Request");
@@ -73,16 +73,15 @@ void Tcpconn::handleRead(){
             else{
                 _pstate = PRO_PARSE_HEADERS;
             }
-            break;
         }
-        case PRO_PARSE_HEADERS:{
+        if(_pstate == PRO_PARSE_HEADERS){
             HeaderState hstate = this -> parseHeaders();
             if(PARSE_HEADER_AGAIN == hstate){
                 //do nothing
             }
-            else if(PARSE_URI_ERROR == hstate){
+            else if(PARSE_HEADER_ERROR == hstate){
                 perror("parse header error");
-                LOG << _connfd << " parse header error";
+                //LOG << _connfd << " parse header error";
                 handleError(_connfd, 400, "Bad Request");
                 break;
             }
@@ -92,9 +91,8 @@ void Tcpconn::handleRead(){
             else{
                 _pstate = PRO_ANALYSIS;
             }
-            break;
         }
-        case PRO_RECV_BODY:{
+        if(_pstate == PRO_RECV_BODY){
             int content_len = -1;
             if(_headers.find("Content-length") != _headers.end()){
                 content_len = stoi(_headers["Content-length"]);
@@ -108,9 +106,8 @@ void Tcpconn::handleRead(){
                 break;
             }
             _pstate = PRO_ANALYSIS;
-            break;
         }
-        case PRO_ANALYSIS:{
+        if( _pstate == PRO_ANALYSIS){
             AnalysisState astate = this -> parseRequsets();
             if(ANALYSIS_SUCCESS == astate){
                 _pstate = PRO_FINISH;
@@ -118,25 +115,20 @@ void Tcpconn::handleRead(){
             else{
                 _error = true;
             }
-            break;
         }
-        
-        default:
-            break;
-        }
-        if(! _error){
-            LOG << "Parse success ";
+
+    }while(false);
+    if(! _error){
+            // LOG << "Parse success ";
+            // LOG << "outbuffer size: " << _outbuffer.size();
             if(_outbuffer.size() > 0){
-                LOG << "outbuffer: " << _outbuffer << '\n';
+                // LOG << "outbuffer: " << _outbuffer << '\n';
                 handleWrite();
             }
-            if(! _error && _pstate == PRO_FINISH){
+            if(! _error && _pstate == PRO_FINISH && _outbuffer.size() == 0){
                 this -> reset();
             }
         }
-        
-
-    }while(false);
 }
 
 void Tcpconn::handleWrite(){
@@ -164,7 +156,7 @@ void Tcpconn::newEvent(){
 }
 
 void Tcpconn::handleConn(){
-    LOG << "handling connection";
+    //LOG << "handling connection";
     __uint32_t& _events = _channel -> getEvents();
     if(_events & EPOLLOUT){
         LOG << "Handleconn event detects: EPOLLOUT";
@@ -177,7 +169,7 @@ void Tcpconn::handleConn(){
     // _loop -> updatePoller(_channel, timeout);
 }
 void Tcpconn::handleError(int fd, int err_num, std::string msg){
-    LOG << "Doing Handle Error";
+    //LOG << "Doing Handle Error";
     msg = " " + msg;
     char send_buf[4096];
     string body_buff, header_buff;
@@ -208,6 +200,7 @@ void Tcpconn::handleClose(){
 
 
 AnalysisState Tcpconn::parseRequsets(){
+    //LOG << "Parsing requests ...";
     if(_opt == POST){
 
     }
@@ -230,12 +223,16 @@ AnalysisState Tcpconn::parseRequsets(){
         }
         // test case
         if(_filename == "hello"){
-            _outbuffer = "HTTP/1.1 200 OK\r\nContent-type: text/plain\r\n\r\nSuccess";
+            _outbuffer += "HTTP/1.1 200 OK\r\n";
+            _outbuffer += "Content-type: text/plain\r\n";
+            _outbuffer += "Content-Length: " + std::to_string(strlen("Success")) + "\r\n";
+            _outbuffer += "\r\nSuccess";
             return ANALYSIS_SUCCESS;
         }
         //文件是否存在
+        std::string filepath = BASE_DIR + _filename;
         struct stat sbuf;
-        if(stat(_filename.c_str(), &sbuf) < 0){
+        if(stat(filepath.c_str(), &sbuf) < 0){
             header.clear();
             handleError(_connfd, 404, "Not found");
             return ANALYSIS_ERROR;
@@ -248,7 +245,7 @@ AnalysisState Tcpconn::parseRequsets(){
 
         if(_opt == HEAD) return ANALYSIS_SUCCESS;
         //尝试打开文件
-        int src_fd = open(_filename.c_str(), O_RDONLY, 0);
+        int src_fd = open(filepath.c_str(), O_RDONLY, 0);
         if(src_fd < 0){
             _outbuffer.clear();
             handleError(_connfd, 404, "Not Found!");
@@ -272,6 +269,7 @@ AnalysisState Tcpconn::parseRequsets(){
 }
 
 URIState Tcpconn::parseURI(){
+    LOG << "Parsing URI ...";
     string& str = _inbuffer;
     string cop = str;
     size_t pos = str.find('\r', _nowReadPos);
@@ -305,7 +303,9 @@ URIState Tcpconn::parseURI(){
         return PARSE_URI_ERROR;
     }
     // filename
+    LOG << "req_line is " << req_line;
     pos = req_line.find("/", pos);
+    LOG << "pos is " << pos;
     if(pos < 0){
         _filename = "index.html";
         _version = HTTP11;
@@ -313,8 +313,10 @@ URIState Tcpconn::parseURI(){
     }
     else{
         size_t _pos = req_line.find(' ', pos);
+        LOG << "pos2 is " << _pos;
         if(_pos - pos > 1){
-            _filename = req_line.substr(pos + 1, _pos);
+            _filename = req_line.substr(pos + 1, _pos - pos - 1);
+            LOG << "filename1 is " << _filename;
             size_t __pos = _filename.find('?');
             if(__pos >= 0){
                 _filename = _filename.substr(0, __pos);
@@ -342,10 +344,12 @@ URIState Tcpconn::parseURI(){
             return PARSE_URI_ERROR;
         }
     }
+    
     return PARSE_URI_SUCCESS;
 }
 
 HeaderState Tcpconn::parseHeaders(){
+    LOG << "Parsing header ...";
     string& str = _inbuffer;
     int key_start = -1, key_end = -1, value_start = -1, value_end = -1;
     int cur_line_pos = 0;
