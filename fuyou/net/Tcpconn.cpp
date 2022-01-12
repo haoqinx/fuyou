@@ -37,6 +37,7 @@ Tcpconn::~Tcpconn(){
 void Tcpconn::handleRead(){
     LOG << "handle read...";
     __uint32_t &events = _channel -> getEvents();
+    LOG << "current events : " << events;
     bool isClose = false;
     bool isEnd = false;
     do{
@@ -120,22 +121,23 @@ void Tcpconn::handleRead(){
 
     }while(false);
     if(! _error){
-            // LOG << "Parse success ";
-            // LOG << "outbuffer size: " << _outbuffer.size();
-            if(_outbuffer.size() > 0){
-                // LOG << "outbuffer: " << _outbuffer << '\n';
-                handleWrite();
-            }
-            if(! _error && _pstate == PRO_FINISH && _outbuffer.size() == 0){
-                this -> reset();
-            }
+        if (_outbuffer.size() > 0) {
+            handleWrite();
+            // events_ |= EPOLLOUT;
         }
+        // error_ may change
+        if (!_error && _pstate == PRO_FINISH) {
+            this->reset();
+            if (_inbuffer.size() > 0) {
+                if (_connectionState != STATE_DISCONNECTING) handleRead();
+            }
+    }
 }
 
 void Tcpconn::handleWrite(){
+    LOG << "handle Write...";
     if(!_error){
         __uint32_t &_events = _channel -> getEvents();
-        LOG << "handle Write: " << _events;
         int writeBytes = 0;
         if((writeBytes = writen(_connfd, _outbuffer)) < 0){
             perror("writen error");
@@ -144,12 +146,14 @@ void Tcpconn::handleWrite(){
         }
         else if(_outbuffer.size() > 0){
             _events |= EPOLLOUT;
-            LOG << "write " << writeBytes << " data";
-          
+            _events |= EPOLLIN | EPOLLPRI | EPOLLRDHUP;
+            _channel -> setEvents(_events);
+            _poller -> epollMod(_channel, 0);
+            LOG << "last " << writeBytes << " data";
         }
-        _events |= EPOLLIN | EPOLLPRI | EPOLLRDHUP;
-        _channel -> setEvents(_events);
-        _poller -> epollMod(_channel, 0);
+        LOG << "_outbuffer size: " << _outbuffer.size();
+        LOG << "Have write " << writeBytes << "Bytes.";
+        
     }
 }
 
@@ -160,7 +164,7 @@ void Tcpconn::newEvent(){
 
 void Tcpconn::handleConn(){
     LOG << "handling connection, conn state: " << _connectionState;
-    LOG << "is KeepAlive ? " << _isKeepAlive;
+    // LOG << "is KeepAlive ? " << _isKeepAlive;
     seperateTimer();
     __uint32_t& _events = _channel -> getEvents();
     LOG << "Events: " << _events; 

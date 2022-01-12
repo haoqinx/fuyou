@@ -54,7 +54,7 @@ ssize_t writen(int fd, void* buff, size_t n){
                     return writeSum;
                 }
                 else{
-                    LOG << "haswriten  " << writeSum << " errno is " << errno; 
+                    //LOG << "haswriten  " << writeSum << " errno is " << errno; 
                     return -1;
                 }
             }
@@ -73,7 +73,7 @@ ssize_t readn(int fd, string& buff, bool& zero){
         if((nread = read(fd, tmp, MAX_BUFF)) < 0){
             if(errno == EINTR) continue;
             else if(errno == EAGAIN){
-                LOG << "Read down";
+                //LOG << "Read down";
                 return readSum;
             }
             else{
@@ -96,7 +96,7 @@ ssize_t writen(int fd, std::string& buf){
     ssize_t nwritten = 0;
     ssize_t writeSum = 0;
     const char* ptr = buf.c_str();
-    LOG << "data is " << buf.c_str();
+    //LOG << "data is " << buf.c_str();
     while(nleft > 0){
         if((nwritten = write(fd, ptr, nleft)) <= 0){
             if(nwritten < 0){
@@ -105,11 +105,11 @@ ssize_t writen(int fd, std::string& buf){
                     continue;
                 }
                 else if(errno == EAGAIN){
-                    LOG << "Write down";
+                    // LOG << "Write down";
                     break;
                 }
                 else{
-                    LOG << fd << " may be closed";
+                    // LOG << fd << " may be closed";
                     return -1;
                 }
             }

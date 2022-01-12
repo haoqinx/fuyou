@@ -66,6 +66,7 @@ void TimerManager::handleExpiredEvent(){
             timeNodeQueue.pop();
         }
         else if(! node -> isVaild()){
+            LOG << "超时";
             timeNodeQueue.pop();
         }
         else break;
