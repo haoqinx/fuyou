@@ -1,5 +1,5 @@
 /home/hqin/fuyou/fuyou/CMakeFiles/rebuild_cache.dir
-/home/hqin/fuyou/fuyou/CMakeFiles/servertest.dir
+/home/hqin/fuyou/fuyou/CMakeFiles/server.dir
 /home/hqin/fuyou/fuyou/CMakeFiles/edit_cache.dir
 /home/hqin/fuyou/fuyou/base/CMakeFiles/rebuild_cache.dir
 /home/hqin/fuyou/fuyou/base/CMakeFiles/fuyou_base.dir

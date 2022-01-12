@@ -60,40 +60,40 @@ CMAKE_SOURCE_DIR = /home/hqin/fuyou/fuyou
 CMAKE_BINARY_DIR = /home/hqin/fuyou/fuyou
 
 #=============================================================================
-# Target rules for target CMakeFiles/servertest.dir
+# Target rules for target CMakeFiles/server.dir
 
 # All Build rule for target.
-CMakeFiles/servertest.dir/all: base/CMakeFiles/fuyou_base.dir/all
-CMakeFiles/servertest.dir/all: net/CMakeFiles/fuyou_net.dir/all
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/depend
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=23,24 "Built target servertest"
-.PHONY : CMakeFiles/servertest.dir/all
+CMakeFiles/server.dir/all: base/CMakeFiles/fuyou_base.dir/all
+CMakeFiles/server.dir/all: net/CMakeFiles/fuyou_net.dir/all
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hqin/fuyou/fuyou/CMakeFiles --progress-num=23,24 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
 
 # Include target in all.
-all: CMakeFiles/servertest.dir/all
+all: CMakeFiles/server.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/servertest.dir/rule: cmake_check_build_system
+CMakeFiles/server.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 20
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/servertest.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hqin/fuyou/fuyou/CMakeFiles 0
-.PHONY : CMakeFiles/servertest.dir/rule
+.PHONY : CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-servertest: CMakeFiles/servertest.dir/rule
+server: CMakeFiles/server.dir/rule
 
-.PHONY : servertest
-
-# clean rule for target.
-CMakeFiles/servertest.dir/clean:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/clean
-.PHONY : CMakeFiles/servertest.dir/clean
+.PHONY : server
 
 # clean rule for target.
-clean: CMakeFiles/servertest.dir/clean
+CMakeFiles/server.dir/clean:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/server.dir/clean
 
 .PHONY : clean
 

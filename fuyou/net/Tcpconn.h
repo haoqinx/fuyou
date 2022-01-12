@@ -1,6 +1,5 @@
 #ifndef __TCPCONN_H
 #define __TCPCONN_H
-
 #include "../base/Logger.h"
 #include "Channel.h"
 #include "Epoll.h"
@@ -11,7 +10,7 @@
 #include <memory>
 #include <atomic>
 #include <map>
-#include "Timer.h"
+
 
 namespace fuyou
 {
@@ -38,6 +37,16 @@ public:
     URIState parseURI();
     HeaderState parseHeaders();
     void reset();
+    void linkTimer(std::shared_ptr<TimerNode> timer){
+        _timer = timer;
+    }
+    void seperateTimer(){
+        if(_timer.lock()){
+            std::shared_ptr<TimerNode> my_timer(_timer.lock());
+            my_timer -> clearReq();
+            _timer.reset();
+        }
+    }
 private:
     EventLoop* _loop;
     int _connfd;

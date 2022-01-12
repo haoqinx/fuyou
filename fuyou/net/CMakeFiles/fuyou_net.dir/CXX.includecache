@@ -281,10 +281,6 @@ memory
 /home/hqin/fuyou/fuyou/net/Tcpconn.cpp
 Tcpconn.h
 /home/hqin/fuyou/fuyou/net/Tcpconn.h
-Epoll.h
-/home/hqin/fuyou/fuyou/net/Epoll.h
-Httpdata.h
-/home/hqin/fuyou/fuyou/net/Httpdata.h
 memory
 -
 unistd.h
@@ -317,14 +313,14 @@ atomic
 -
 map
 -
-Timer.h
-/home/hqin/fuyou/fuyou/net/Timer.h
 
 /home/hqin/fuyou/fuyou/net/Timer.cpp
 Timer.h
 /home/hqin/fuyou/fuyou/net/Timer.h
 sys/time.h
 -
+Tcpconn.h
+/home/hqin/fuyou/fuyou/net/Tcpconn.h
 
 /home/hqin/fuyou/fuyou/net/Timer.h
 memory

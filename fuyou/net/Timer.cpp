@@ -1,5 +1,6 @@
 #include "Timer.h"
 #include <sys/time.h>
+#include "Tcpconn.h"
 
 namespace fuyou
 {
@@ -74,7 +75,7 @@ void TimerManager::handleExpiredEvent(){
 void TimerManager::addTimer(std::shared_ptr<Tcpconn> SPHttpData, int timeout){
     SP_TimeNode newNode(new TimerNode(SPHttpData, timeout));
     timeNodeQueue.push(newNode);
-    // SPHttpData -> linkTimer(newNode);   
+    SPHttpData -> linkTimer(newNode);   
 }
 
     

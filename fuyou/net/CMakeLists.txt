@@ -7,7 +7,6 @@ set(
     Timer.cpp
     Util.cpp
     EventLoopThread.cpp
-    Timer.cpp
     EventLoopThreadPool.cpp
     Server.cpp
     Httpdata.cpp

@@ -50,7 +50,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/servertest.dir/DependInfo.cmake"
+  "CMakeFiles/server.dir/DependInfo.cmake"
   "base/CMakeFiles/fuyou_base.dir/DependInfo.cmake"
   "base/tests/CMakeFiles/loggertest.dir/DependInfo.cmake"
   "net/CMakeFiles/fuyou_net.dir/DependInfo.cmake"

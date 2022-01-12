@@ -1,6 +1,4 @@
 #include "Tcpconn.h"
-#include "Epoll.h"
-#include "Httpdata.h"
 #include <memory>
 #include <unistd.h>
 #include <sys/mman.h>
@@ -12,6 +10,7 @@ namespace fuyou
 const __uint32_t DEFAULT_EVENT = EPOLLIN |  EPOLLPRI | EPOLLRDHUP;
 const int DEFAULT_EXPIRED_TIME = 2000;  
 const int KEEP_CONN_TIME = 5 * 60 * 1000;
+// The path to the static resource folder
 const std::string BASE_DIR = "/home/hqin/fuyou/static/";
 
 Tcpconn::Tcpconn(EventLoop* loop, int connfd):
@@ -24,6 +23,7 @@ Tcpconn::Tcpconn(EventLoop* loop, int connfd):
                 _opt(GET),
                 _connectionState(STATE_CONNECTED),
                 _pstate(PRO_PARSE_URI){
+    _channel -> setEvents(EPOLLIN | EPOLLPRI | EPOLLRDHUP);
     _channel -> setReadHandler(bind(&Tcpconn::handleRead, this));
     _channel -> setWriteHandler(bind(&Tcpconn::handleWrite, this));
     _channel -> setConnHandler(bind(&Tcpconn::handleConn, this));
@@ -35,6 +35,7 @@ Tcpconn::~Tcpconn(){
 }
 
 void Tcpconn::handleRead(){
+    LOG << "handle read...";
     __uint32_t &events = _channel -> getEvents();
     bool isClose = false;
     bool isEnd = false;
@@ -42,7 +43,7 @@ void Tcpconn::handleRead(){
         bool zero = false;
         int readBytes = readn(_connfd, _inbuffer, zero);
         // test info
-        // LOG << "New Msg :" << _inbuffer; 
+        LOG << "New Msg :" << _inbuffer; 
         if( STATE_DISCONNECTING == _connectionState){
             _inbuffer.clear();
             break;
@@ -52,10 +53,10 @@ void Tcpconn::handleRead(){
             handleError(_connfd, 400, "Bad req");
         }
         else if(zero){
+            LOG << "read zero data....";
             _connectionState = STATE_DISCONNECTING;
             handleClose();
         }   
-        
         
         if( _pstate == PRO_PARSE_URI){
             URIState ustate = this -> parseURI();
@@ -144,9 +145,11 @@ void Tcpconn::handleWrite(){
         else if(_outbuffer.size() > 0){
             _events |= EPOLLOUT;
             LOG << "write " << writeBytes << " data";
-            _channel -> setEvents(_events);
-            _poller -> epollMod(_channel, 0);
+          
         }
+        _events |= EPOLLIN | EPOLLPRI | EPOLLRDHUP;
+        _channel -> setEvents(_events);
+        _poller -> epollMod(_channel, 0);
     }
 }
 
@@ -156,14 +159,29 @@ void Tcpconn::newEvent(){
 }
 
 void Tcpconn::handleConn(){
-    //LOG << "handling connection";
+    LOG << "handling connection, conn state: " << _connectionState;
+    LOG << "is KeepAlive ? " << _isKeepAlive;
+    seperateTimer();
     __uint32_t& _events = _channel -> getEvents();
+    LOG << "Events: " << _events; 
     if(_events & EPOLLOUT){
         LOG << "Handleconn event detects: EPOLLOUT";
     }
     else if(_events & EPOLLIN){
         LOG << "Handleconn event detects: EPOLLIN";
     }
+    // if(! _error && _connectionState == STATE_CONNECTED){
+    //     int timeout = DEFAULT_EXPIRED_TIME;
+    //     if(_isKeepAlive) timeout = KEEP_CONN_TIME;
+    //     _events |= EPOLLIN |  EPOLLPRI | EPOLLRDHUP;
+    //     _loop -> updatePoller(_channel, timeout);
+    // }
+    // else if(! _error && _connectionState == STATE_DISCONNECTING){
+    //     LOG << "disconnecting..."
+    // }
+    // else{
+    //     _loop -> runInLoop(bind(&Tcpconn::handleClose, shared_from_this()));
+    // }
     // _events |= (EPOLLIN | EPOLLET);
     // int timeout = KEEP_CONN_TIME;
     // _loop -> updatePoller(_channel, timeout);
@@ -193,6 +211,7 @@ void Tcpconn::handleError(int fd, int err_num, std::string msg){
 
 void Tcpconn::handleClose(){
     LOG << "begin to close";
+    _connectionState = STATE_DISCONNECTED;
     std::shared_ptr<Tcpconn> guard(shared_from_this());
     _loop -> removeFromPoller(_channel);
 }
@@ -200,7 +219,7 @@ void Tcpconn::handleClose(){
 
 
 AnalysisState Tcpconn::parseRequsets(){
-    //LOG << "Parsing requests ...";
+    LOG << "Parsing requests ...";
     if(_opt == POST){
 
     }
@@ -303,9 +322,9 @@ URIState Tcpconn::parseURI(){
         return PARSE_URI_ERROR;
     }
     // filename
-    LOG << "req_line is " << req_line;
+    // LOG << "req_line is " << req_line;
     pos = req_line.find("/", pos);
-    LOG << "pos is " << pos;
+    // LOG << "pos is " << pos;
     if(pos < 0){
         _filename = "index.html";
         _version = HTTP11;
@@ -313,10 +332,10 @@ URIState Tcpconn::parseURI(){
     }
     else{
         size_t _pos = req_line.find(' ', pos);
-        LOG << "pos2 is " << _pos;
+        // LOG << "pos2 is " << _pos;
         if(_pos - pos > 1){
             _filename = req_line.substr(pos + 1, _pos - pos - 1);
-            LOG << "filename1 is " << _filename;
+            // LOG << "filename1 is " << _filename;
             size_t __pos = _filename.find('?');
             if(__pos >= 0){
                 _filename = _filename.substr(0, __pos);
@@ -459,10 +478,11 @@ void Tcpconn::reset(){
     _pstate = PRO_PARSE_URI;
     _headerState = H_START;
     _headers.clear();
-    if(_timer.lock()){
-        std::shared_ptr<TimerNode> my_timer(_timer.lock());
-        my_timer -> clearReq();
-        _timer.reset();
-    }
+    seperateTimer();
+    // if(_timer.lock()){
+    //     std::shared_ptr<TimerNode> my_timer(_timer.lock());
+    //     my_timer -> clearReq();
+    //     _timer.reset();
+    // }
 }
 } // namespace fuyou

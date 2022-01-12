@@ -145,8 +145,25 @@ net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o: net/Tcpconn.h
 net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o: net/Timer.h
 net/CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o: net/Util.h
 
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/AsynLogging.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/Condition.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/CountDownLatch.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/CurrentThread.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/FileUtil.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/Filelog.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/Logger.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/Logstream.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/MutexLock.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/Thread.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: base/nonecopyable.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Channel.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Epoll.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/EventLoop.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Httpdata.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Tcpconn.h
 net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Timer.cpp
 net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Timer.h
+net/CMakeFiles/fuyou_net.dir/Timer.cpp.o: net/Util.h
 
 net/CMakeFiles/fuyou_net.dir/Util.cpp.o: base/AsynLogging.h
 net/CMakeFiles/fuyou_net.dir/Util.cpp.o: base/Condition.h

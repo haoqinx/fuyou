@@ -77,7 +77,7 @@ std::vector<SP_Channel> Epoll::getEventRequests(int eventNum){
         SP_Channel curReq = fdToChannel[fd];
         if(curReq){
             curReq -> setRevents(events[i].events);
-            curReq -> setEvents(0);
+            curReq -> setEvents(EPOLLIN |  EPOLLPRI | EPOLLRDHUP);
             reqdata.push_back(curReq);
         }
         else{

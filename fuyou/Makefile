@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named servertest
+# Target rules for targets named server
 
 # Build rule for target.
-servertest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 servertest
-.PHONY : servertest
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-servertest/fast:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/build
-.PHONY : servertest/fast
+server/fast:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 #=============================================================================
 # Target rules for targets named fuyou_base
@@ -181,7 +181,7 @@ Main.o: Main.cpp.o
 
 # target to build an object file
 Main.cpp.o:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Main.cpp.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Main.cpp.o
 .PHONY : Main.cpp.o
 
 Main.i: Main.cpp.i
@@ -190,7 +190,7 @@ Main.i: Main.cpp.i
 
 # target to preprocess a source file
 Main.cpp.i:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Main.cpp.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Main.cpp.i
 .PHONY : Main.cpp.i
 
 Main.s: Main.cpp.s
@@ -199,7 +199,7 @@ Main.s: Main.cpp.s
 
 # target to generate assembly for a file
 Main.cpp.s:
-	$(MAKE) -f CMakeFiles/servertest.dir/build.make CMakeFiles/servertest.dir/Main.cpp.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
 # Help Target
@@ -209,7 +209,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... servertest"
+	@echo "... server"
 	@echo "... edit_cache"
 	@echo "... fuyou_base"
 	@echo "... loggertest"
