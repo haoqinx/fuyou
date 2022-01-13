@@ -4,7 +4,7 @@
 namespace fuyou
 {
 const int EVENTSNUM = 4096;
-const int EPOLLWAIT_TIME = 10000;
+const int EPOLLWAIT_TIME = 2000;
 
 Epoll::Epoll():_epollfd(epoll_create1(EPOLL_CLOEXEC)),
                 events(EVENTSNUM){

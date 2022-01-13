@@ -130,7 +130,8 @@ void Tcpconn::handleRead(){
             this->reset();
             if (_inbuffer.size() > 0) {
                 if (_connectionState != STATE_DISCONNECTING) handleRead();
-            }
+                }
+        }
     }
 }
 
