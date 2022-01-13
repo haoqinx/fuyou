@@ -45,7 +45,7 @@ public:
 
 private:
     typedef std::shared_ptr<TimerNode> SP_TimeNode;
-    std::priority_queue<SP_TimeNode,std::deque<SP_TimeNode>, TimerCmp> timeNodeQueue;
+    std::priority_queue<SP_TimeNode, std::deque<SP_TimeNode>, TimerCmp> timeNodeQueue;
 
 
 };

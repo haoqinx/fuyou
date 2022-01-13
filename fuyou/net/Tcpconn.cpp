@@ -45,10 +45,10 @@ void Tcpconn::handleRead(){
         int readBytes = readn(_connfd, _inbuffer, zero);
         // test info
         LOG << "New Msg :" << _inbuffer; 
-        if( STATE_DISCONNECTING == _connectionState){
-            _inbuffer.clear();
-            break;
-        }
+        // if( STATE_DISCONNECTING == _connectionState){
+        //     _inbuffer.clear();
+        //     break;
+        // }
         if(readBytes < 0){
             perror("read error");
             handleError(_connfd, 400, "Bad req");
