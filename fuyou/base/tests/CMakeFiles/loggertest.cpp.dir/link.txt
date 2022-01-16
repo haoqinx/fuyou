@@ -1,1 +1,0 @@
-/usr/bin/c++       -o loggertest.cpp ../libfuyou_base.a -lpthread -lrt 

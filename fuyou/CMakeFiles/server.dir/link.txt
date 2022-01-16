@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/server.dir/Main.cpp.o  -o server net/libfuyou_net.a base/libfuyou_base.a -lpthread -lrt 
