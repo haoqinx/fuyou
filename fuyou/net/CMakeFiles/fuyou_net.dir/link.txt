@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfuyou_net.a  CMakeFiles/fuyou_net.dir/Channel.cpp.o CMakeFiles/fuyou_net.dir/Epoll.cpp.o CMakeFiles/fuyou_net.dir/EventLoop.cpp.o CMakeFiles/fuyou_net.dir/Timer.cpp.o CMakeFiles/fuyou_net.dir/Util.cpp.o CMakeFiles/fuyou_net.dir/EventLoopThread.cpp.o CMakeFiles/fuyou_net.dir/EventLoopThreadPool.cpp.o CMakeFiles/fuyou_net.dir/Server.cpp.o CMakeFiles/fuyou_net.dir/Httpdata.cpp.o CMakeFiles/fuyou_net.dir/Tcpconn.cpp.o
+/usr/bin/ranlib libfuyou_net.a

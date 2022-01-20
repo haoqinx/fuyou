@@ -130,7 +130,7 @@ void Tcpconn::handleRead(){
             this->reset();
             if (_inbuffer.size() > 0) {
                 if (_connectionState != STATE_DISCONNECTING) handleRead();
-                }
+            }
         }
     }
 }
@@ -144,6 +144,10 @@ void Tcpconn::handleWrite(){
             perror("writen error");
             _events = 0;
             _error = true;
+        }
+        if(_outbuffer.size() == 0 && ! _isKeepAlive){
+            _connectionState = STATE_DISCONNECTING;
+            handleClose();
         }
         else if(_outbuffer.size() > 0){
             _events |= EPOLLOUT;
@@ -482,7 +486,11 @@ void Tcpconn::reset(){
     _nowReadPos = 0;
     _pstate = PRO_PARSE_URI;
     _headerState = H_START;
-    _headers.clear();
+    // _headers.clear();
+    // std::map<std::string, std::string > empty_map;
+    // _headers.swap(empty_map);
+    // _headers.clear();
+
     seperateTimer();
     // if(_timer.lock()){
     //     std::shared_ptr<TimerNode> my_timer(_timer.lock());
